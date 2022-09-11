@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheet Multi Language</title>
+    <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+    <table class="table-style">
+        <thead>
+            <tr>
+                <th>Language</th>
+                <th>JS</th>
+                <th>LUA</th>
+                <th>C#</th>
+                <th>Python</th>
+            </tr>
+        </thead>
+        
+
+        <tbody>
+            <tr>
+                <td>PRINT CONSOLE</td>
+                <td>console.log();</td>
+                <td>print()</td>
+                <td>Console.WriteLine(Nom);</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Déclarer une variable </td>
+                <td>x = variable;</td>
+                <td>x = variable</td>
+                <td>string x = variable ?</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Déclarer une chaîne de caractère </td>
+                <td>x = "blabla";</td>
+                <td>x = "blabla"</td>
+                <td>string x = "blabla"</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Déclarer une valeur numérique </td>
+                <td>x = 2;</td>
+                <td>x = 2</td>
+                <td>int x = 2 <br>
+                    où
+                    float x = 2.5</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Déclarer une variable jetable</td>
+                <td>let</td>
+                <td>local</td>
+                <td>/</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Déclarer une variable constante</td>
+                <td>const</td>
+                <td>/</td>
+                <td>/</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Concaténation</td>
+                <td>console.log("blabla" + variable );</td>
+                <td>print("blabla" .. (tostring(variable)))<br>
+                où <br>
+                print("blabla" .. variable)</td>
+                <td>Console.WriteLine("blabla" + variable);</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Déclarer une variable <br>
+                en écrivant sur le clavier</td>
+                <td>/</td>
+                <td>/</td>
+                <td style="text-align: left;">Console.ReadLine(); <br>
+                ex: string x = Console.ReadLine();</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Convertir un numérique en string</td>
+                <td>/</td>
+                <td>/</td>
+                <td>int x_num = int.Parse(x_string);</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Gérer l'exception</td>
+                <td>/</td>
+                <td>/</td>
+                <td style="text-align: left;">try{<br>
+                    écrire le code initial<br>
+                    }<br>
+                catch {<br>
+                    écrire le code où le print() en cas d'érreur<br>
+                }</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Commentaire</td>
+                <td> // par ligne <br>
+                    /* */ par bloc  </td>
+                <td>-- par ligne</td>
+                <td>// par ligne <br>
+                    /* */ par bloc</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Boucle while</td>
+                <td>/</td>
+                <td>/</td>
+                <td style="text-align: left;">int = 0;<br>
+                    while (i == 0)<br>
+                    {<br>
+                        Console.WriteLine("Valeur de i : " + i);<br>
+                    }
+                </td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Boucle For</td>
+                <td>/</td>
+                <td>/</td>
+                <td style="text-align: left;">int i, j;<br>
+                    for (i = 2; i < 100; i++)<br>
+                    {<br>
+                       *Action*<br>
+                    }
+                </td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Différence</td>
+                <td>!=</td>
+                <td>~=</td>
+                <td>!=</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Déclarer une fonction</td>
+                <td>function nomDeLaFonction()<br>
+                    {<br>
+                        *action*;<br>
+                    }</td>
+                <td>function nomDeLaFonction()<br>
+                        *action*<br>
+                    end</td>
+                <td>static int nomDeLaFonction()<br>
+                    {<br>
+                        *action*;<br>
+                    }</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Appellez une fonction</td>
+                <td>nomDeLaFonction();</td>
+                <td>nomDeLaFonction()</td>
+                <td>int nomDeLaFonction();</td>
+                <td>/</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
