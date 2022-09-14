@@ -128,7 +128,7 @@
                 <td>/</td>
                 <td>/</td>
                 <td style="text-align: left;">int i, j;<br>
-                    for (i = 2; i < 100; i++)<br>
+                    for (i = 0; i < 100; i++)<br>
                     {<br>
                        *Action*<br>
                     }
@@ -144,14 +144,14 @@
             </tr>
             <tr>
                 <td>Déclarer une fonction</td>
-                <td>function nomDeLaFonction()<br>
+                <td style="text-align: left;">function nomDeLaFonction()<br>
                     {<br>
                         *action*;<br>
                     }</td>
-                <td>function nomDeLaFonction()<br>
+                <td style="text-align: left;">function nomDeLaFonction()<br>
                         *action*<br>
                     end</td>
-                <td>static int nomDeLaFonction()<br>
+                <td style="text-align: left;">static int nomDeLaFonction()<br>
                     {<br>
                         *action*;<br>
                     }</td>
@@ -168,6 +168,17 @@
                 <td>Random</td>
                 <td>Math.random( min, max )</td>
                 <td>love.math.random( min, max )</td>
+                <td>/</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Random <br> via une fonction</td>
+                <td style="text-align: left;">function rnd(min, max) {<br>
+                    min = Math.ceil(min);<br>
+                    max = Math.floor(max);<br>
+                    return Math.floor(Math.random() * (max - min)) + min;<br>
+                }</td>
+                <td>/</td>
                 <td>/</td>
                 <td>/</td>
             </tr>
