@@ -1,0 +1,7 @@
+- Algo à rajouter :
+    - Epreuve du feu/ terre / eau / vent
+    - Gamecodeur exercice 2 & 3
+
+- Syntaxe à rajouter :
+    - Python
+    - PHP

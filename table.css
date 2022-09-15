@@ -40,6 +40,10 @@ tbody tr:nth-child(even){
     background-color: #f3f3f3;
 }
 
+#liens {
+    margin: 0 auto;
+}
+
 @media (max-width: 550px) {
   body {
     padding: 0px;
