@@ -84,7 +84,7 @@
                     en écrivant sur le clavier</td>
                     <td>/</td>
                     <td>/</td>
-                    <td style="text-align: left;">Console.ReadLine(); <br>
+                    <td>Console.ReadLine(); <br>
                     ex: string x = Console.ReadLine();</td>
                     <td>/</td>
                 </tr>
@@ -100,12 +100,25 @@
                     <td>/</td>
                     <td>/</td>
                     <td style="text-align: left;">try{<br>
-                        écrire le code initial<br>
+                        <span class="marge">écrire le code initial</span><br>
                         }<br>
                     catch {<br>
-                        écrire le code où le print() en cas d'érreur<br>
+                        <span class="marge">écrire le code où le print() en cas d'érreur</span><br>
                     }</td>
-                    <td>/</td>
+                    <td style="text-align: left;">try :<br>
+                        <span class="marge">lunch()</span><br>
+                    except SyntaxError :<br>
+                    <span class="marge">print('Fix your syntax')</span><br>
+                    except TypeError :<br>
+                    <span class="marge">print('Oh no! A TypeError has occured')</span><br>
+                    except ValueError :<br>
+                    <span class="marge">print('A ValueError occured!')</span><br>
+                    except ZeroDivisionError :<br>
+                    <span class="marge">print('Did by zero?')</span><br>
+                    else :<br>
+                    <span class="marge">print('No exception')</span><br>
+                    finally :<br>
+                    <span class="marge">print('Ok then')</span></td>
                 </tr>
                 <tr>
                     <td>Commentaire</td>
@@ -123,7 +136,7 @@
                     <td style="text-align: left;">int = 0;<br>
                         while (i == 0)<br>
                         {<br>
-                            Console.WriteLine("Valeur de i : " + i);<br>
+                        <span class="marge">Console.WriteLine("Valeur de i : " + i);</span><br>
                         }
                     </td>
                     <td>/</td>
@@ -135,7 +148,7 @@
                     <td style="text-align: left;">int i, j;<br>
                         for (i = 0; i < 100; i++)<br>
                         {<br>
-                        *Action*<br>
+                        <span class="marge">*Action*</span><br>
                         }
                     </td>
                     <td>/</td>
@@ -151,14 +164,14 @@
                     <td>Déclarer une fonction</td>
                     <td style="text-align: left;">function nomDeLaFonction()<br>
                         {<br>
-                            *action*;<br>
+                        <span class="marge">*action*;</span><br>
                         }</td>
                     <td style="text-align: left;">function nomDeLaFonction()<br>
-                            *action*<br>
+                        <span class="marge">*action*</span><br>
                         end</td>
                     <td style="text-align: left;">static int nomDeLaFonction()<br>
                         {<br>
-                            *action*;<br>
+                        <span class="marge">*action*;</span><br>
                         }</td>
                     <td>/</td>
                 </tr>

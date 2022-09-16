@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+.marge {
+    margin-left: 2em;
+}
+
 body {
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
