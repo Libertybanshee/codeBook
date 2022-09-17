@@ -5,3 +5,5 @@
 - Syntaxe à rajouter :
     - Python
     - PHP
+    - créer une liste
+    - créer les condition if / elseif
