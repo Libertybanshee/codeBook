@@ -1,6 +1,7 @@
 - Algo à rajouter :
     - Epreuve du feu/ terre / eau / vent
     - Gamecodeur exercice 2 & 3
+    - test technique influx
 
 - Syntaxe à rajouter :
     - Python
