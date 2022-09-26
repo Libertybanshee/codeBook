@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sheet Multi Language</title>
+    <title>Code Book</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios/50/000000/informatics-book.png">
     <link rel="stylesheet" type="text/css" href="table.css">
 </head>
 <body>
@@ -16,24 +17,36 @@
         <table class="table-style">
             <thead>
                 <tr>
-                    <th>Language</th>
-                    <th>JS</th>
-                    <th>LUA / LOVE2D</th>
-                    <th>C#</th>
-                    <th>Python</th>
+                    <th>Problème</th>
+                    <th>Solution</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Random <br> via une fonction</td>
+                    <td>Random <br> via une fonction<br> - Javascript -</td>
                     <td style="text-align: left;">function rnd(min, max) {<br>
                         <span class="marge">min = Math.ceil(min);</span><br>
                         <span class="marge">max = Math.floor(max);</span><br>
                         <span class="marge">return Math.floor(Math.random() * (max - min)) + min;</span><br>
                     }</td>
-                    <td>/</td>
-                    <td>/</td>
-                    <td>/</td>
+                </tr>
+                <tr>
+                    <td>Dans un hangar <br> cherchez le doublon d'un colis<br> - LUA -</td>
+                    <td style="text-align: left;">hangar = {05, 17, 36, 98, 78, 14, 11, 87, 45, 69, 78, 14, 11, 24, 15, 98, 87, 25, 01, 65, 07}<br>
+                        -- trouvez un doublon du colis 11 puis arrêter la recherche<br>
+                        <br>
+                        cherchez = 11 <br>
+                        trouvez = 0<br>
+                        <br>
+                        -- Parcourir la liste pour trouver la variable 11 avec une boucle for<br>
+                        for i, v in ipairs(hangar) do<br>
+                        <span class="marge">if v == cherchez then</span><br>
+                        <span class="marge"><span class="marge">trouvez = trouvez + 1</span></span><br>
+                            <span class="marge">elseif trouvez == 2 then</span><br>
+                                <span class="marge"><span class="marge">print("Colis en double !!")</span></span><br>
+                                <span class="marge"><span class="marge"> break</span></span><br>
+                            <span class="marge">end</span><br>
+                        end</td>
                 </tr>
             </tbody>
         </table>
