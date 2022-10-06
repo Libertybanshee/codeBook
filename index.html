@@ -93,10 +93,14 @@
                     <td>condition ELSE IF</td>
                     <td style="text-align: left;">if ( condition ) {<br>
                         <span class="marge">*action*</span><br>
-                    } else if {<br>
+                    } else if ( condition ) {<br>
                         <span class="marge">*action*</span><br>
                     }</td>
-                    <td>/</td>
+                    <td style="text-align: left;">if ( condition ) then<br>
+                        <span class="marge">*action*</span><br>
+                    elseif ( condition ) then<br>
+                        <span class="marge">*action*</span><br>
+                    end</td>
                     <td>/</td>
                     <td>/</td>
                 </tr>
