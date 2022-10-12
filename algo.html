@@ -80,6 +80,23 @@
                         console.log(affichez);<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>Afficheur d'argument <br> Epreuve du feu<br> - Javascript -</td>
+                    <td style="text-align: left;">var argument = process.argv.slice(2);<br>
+                        var affichez = "";<br>
+                        <br>
+                        for (i = 0; i < argument.length; i++) {<br>
+                            <span class="marge">affichez += argument[i];</span><br>
+                            <span class="marge">console.log(affichez);</span><br>
+                        }<br>
+                        var separation = affichez.split("");<br>
+                        <br>
+                        console.log(separation);<br>
+                        <br>
+                        separation -= separation[3];<br>
+                        console.log(separation + " la lettre a disparue ?");<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
