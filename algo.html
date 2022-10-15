@@ -97,6 +97,25 @@
                         console.log(separation + " la lettre a disparue ?");<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>L'alphabet à partir<br> Epreuve du feu<br> - Javascript -</td>
+                    <td style="text-align: left;">var nom = process.argv[2];<br>
+                        var lettre = "abcdefghijklmnopqrstuvwxyz";<br>
+                        var affichez = "";<br>
+                        var a = "";<br>
+                        <br>
+                        for (j = 0; j < lettre.length; j++) {<br>
+                            <span class="marge">if (lettre[j] == nom) {</span><br>
+                            <span class="marge">a = j;</span><br>
+                            }<br>
+                        }<br>
+                        var separation = affichez.split("");<br>
+                        for (i = a; i < alphabet.length; i++) {<br>
+                            <span class="marge">affichez += alphabet[i];</span><br>
+                        }<br>
+                        console.log(affichez);<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
