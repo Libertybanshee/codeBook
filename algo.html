@@ -49,7 +49,7 @@
                         end</td>
                 </tr>
                 <tr>
-                    <td>Alphabet <br> Epreuve du feu<br> - Javascript -</td>
+                    <td>Alphabet <br>Epreuve de la terre<br> - Javascript -</td>
                     <td style="text-align: left;">var lettre = "abcdefghijklmnopqrstuvwxyz";<br>
                         var alphabet = lettre.split("");<br>
                         var affichez = "";<br>
@@ -68,7 +68,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Nom du programme <br> Epreuve du feu<br> - Javascript -</td>
+                    <td>Nom du programme <br>Epreuve de la terre<br> - Javascript -</td>
                     <td style="text-align: left;">const nom = process.argv[1];<br>
                         var separe = nom.split("");<br>
                         var affichez = "";<br>
@@ -81,7 +81,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Afficheur d'argument <br> Epreuve du feu<br> - Javascript -</td>
+                    <td>Afficheur d'argument <br>Epreuve de la terre<br> - Javascript -</td>
                     <td style="text-align: left;">var argument = process.argv.slice(2);<br>
                         var affichez = "";<br>
                         <br>
@@ -98,7 +98,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>L'alphabet à partir<br> Epreuve du feu<br> - Javascript -</td>
+                    <td>L'alphabet à partir<br> Epreuve de la terre<br> - Javascript -</td>
                     <td style="text-align: left;">var nom = process.argv[2];<br>
                         var lettre = "abcdefghijklmnopqrstuvwxyz";<br>
                         var affichez = "";<br>
@@ -114,6 +114,20 @@
                             <span class="marge">affichez += alphabet[i];</span><br>
                         }<br>
                         console.log(affichez);<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>nombre pair ou impair<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const num = process.argv[2];<br>
+                        let res = num % 2<br>
+                        <br>
+                        if (isNaN(res)) {<br>
+                            <span class="marge">console.log("Tu ne me la mettras pas à l'envers")</span><br>
+                        } else if (res === 0) {<br>
+                            <span class="marge">console.log("pair")</span><br>
+                        } else {<br>
+                            <span class="marge">console.log("impair")</span><br>
+                        }<br>
                     </td>
                 </tr>
             </tbody>
