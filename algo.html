@@ -130,6 +130,23 @@
                         }<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>division euclidienne<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const num1 = parseInt(process.argv[2])<br>
+                        const num2 = parseInt(process.argv[3])<br>
+                        let res = num1 % num2<br>
+                        let div = (num1-res) / num2<br>
+                        <br>
+                        if (isNaN(num2) || isNaN(num1)) {<br>
+                            <span class="marge">console.log("Veuillez entrer deux chiffre comme argument")</span><br>
+                        } else if (num2 == 0 || num1 < num2) {<br>
+                            <span class="marge">console.log("Erreur")</span><br>
+                        } else {<br>
+                            <span class="marge">console.log("Resultat : " + div)</span><br>
+                            <span class="marge"> console.log("Reste : " + res)</span><br>
+                        }<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
