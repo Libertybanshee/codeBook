@@ -164,6 +164,22 @@
                         console.log(reverse);<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>Taille de l'argument<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const arg = process.argv;<br>
+                        const arg2 = process.argv[2]<br>
+                        const num = arg2 - 1;<br>
+                        <br>
+                        if (arg.length !== 3) {<br>
+                            <span class="marge">console.log("Veuillez indiquer au script, qu'un seul argument");</span><br>
+                        } else if (!isNaN(num)){<br>
+                            <span class="marge">console.log("Veuillez indiquer au script, un string en argument. Ex : node terre08.js \"Le ciel est bleu\"");</span><br>
+                        } else {<br>
+                            <span class="marge">console.log(arg2.length)</span><br>
+                        }<br>
+                        <br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
