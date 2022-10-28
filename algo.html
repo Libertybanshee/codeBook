@@ -196,6 +196,74 @@
                         <br>
                     </td>
                 </tr>
+                <tr>
+                    <td>trouver la racine carré d'un nombre<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const arg = process.argv[2];<br>
+                        let start = arg;<br>
+                        let int = [];<br>
+                        let car;<br>
+                        let min;<br>
+                        let max;<br>
+                        let mil;<br>
+                        let stop = 0;<br>
+                        let val = [];<br>
+                        let y = 0;<br>
+                        <br>
+                        if (arg % 1 !== 0) {<br>
+                            <span class="marge">console.log("Veuillez indiquer un chiffre entier en argument");</span><br>
+                            <span class="marge">return;</span><br>
+                        }<br>
+                        <br>
+                        //Boucle qui détermine un interval assez proche de la racine carrée<br>
+                        while (int.length < 2) {<br>
+                            <span class="marge">start = Math.round(start / 2);</span><br>
+                            <span class="marge">if (start * start > arg) {</span><br>
+                                <span class="marge"><span class="marge">//Détermine la valeur haute de l'interval</span></span><br>
+                                <span class="marge"><span class="marge">int.shift();</span></span><br>
+                                <span class="marge"><span class="marge">int.push(start);</span></span><br>
+                            <span class="marge">} else if (start * start < arg) {</span><br>
+                                <span class="marge"><span class="marge">//Détermine la valeur basse de l'interval</span></span><br>
+                                <span class="marge"><span class="marge">int.unshift(start);</span></span><br>
+                            <span class="marge">} else {</span><br>
+                                <span class="marge"><span class="marge">console.log("La racine carré de " + arg + " est " + start);</span></span><br>
+                                <span class="marge"><span class="marge">return;</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        min = int[0];<br>
+                        max = int[1];<br>
+                        mil = Math.round((max - min) / 2);<br>
+                        car = min + mil;<br>
+                        <br>
+                        // Boucle qui détermine le carré du nombre en mettant au carré le millieu de l'intervale<br>
+                        if (car * car == arg) {<br>
+                            <span class="marge">console.log("La racine carré de " + arg + " est " + car);</span><br>
+                            <span class="marge">return;</span><br>
+                        }<br>
+                        <br>
+                        while (stop < 100) {<br>
+                            <span class="marge">if (car * car > arg) {</span><br>
+                                <span class="marge"><span class="marge">//Ajoute au millieu la moitié de la différence</span></span><br>
+                                <span class="marge"><span class="marge">mil /= 2; //entre le max et le min de l'interval</span></span><br>
+                                <span class="marge"><span class="marge">car -= Math.round(mil);</span></span><br>
+                                <span class="marge"><span class="marge">y++;</span></span><br>
+                                <span class="marge"><span class="marge">val[y] = car;</span></span><br>
+                            <span class="marge">} else if (car * car < arg) {</span><br>
+                                <span class="marge"><span class="marge">//Soustrait au miilieu la moitié de la différence</span></span><br>
+                                <span class="marge"><span class="marge">mil /= 2; //entre le max et min de l'interval</span></span><br>
+                                <span class="marge"><span class="marge">car += Math.round(mil);</span></span><br>
+                                <span class="marge"><span class="marge">y++;</span></span><br>
+                                <span class="marge"><span class="marge">val[y] = car;</span></span><br>
+                            <span class="marge">} else if (car * car == arg) {</span><br>
+                                <span class="marge"><span class="marge">console.log("La racine carré de " + arg + " est " + car);</span></span><br>
+                                <span class="marge"><span class="marge">return;</span></span><br>
+                            <span class="marge">}</span><br>
+                            <span class="marge">stop++;</span><br>
+                        }<br>
+                        <br>
+                        console.log(arg + " n'a pas de racine carrée");<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
