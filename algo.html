@@ -264,6 +264,46 @@
                         console.log(arg + " n'a pas de racine carrée");<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>nombre premier<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const arg = process.argv[2];<br>
+                        const chi = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];<br>
+                        let res = 0;<br>
+                        let win;<br>
+                        <br>
+                        function premier(arg) {<br>
+                            <span class="marge">if (arg % 1 !== 0) {</span><br>
+                                <span class="marge"><span class="marge">console.log("Veuillez indiquer un chiffre entier en argument");</span></span><br>
+                                <span class="marge"><span class="marge">return;</span></span><br>
+                            <span class="marge">}</span><br>
+                        <br>
+                            <span class="marge">if (arg == 0 || arg == 1) {</span><br>
+                                <span class="marge"><span class="marge">console.log(arg + " n'est pas un nombre premier");</span></span><br>
+                                <span class="marge"><span class="marge">win = false;</span></span><br>
+                            <span class="marge">}</span><br>
+                        <br>
+                            <span class="marge">for (let x = 2; x < chi.length; x++) {</span><br>
+                                <span class="marge"><span class="marge">if ((arg / chi[x]) % 1 == 0) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">res++;</span></span></span>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                            <span class="marge">}</span><br>
+                        <br>
+                            <span class="marge">if (arg <= 10 && res > 1) {</span><br>
+                                <span class="marge"><span class="marge">console.log(arg + " n'est pas un nombre premier");</span></span><br>
+                                <span class="marge"><span class="marge">win = false;</span></span><br>
+                            <span class="marge">} else if (arg > 10 && res >= 1) {</span><br>
+                                <span class="marge"><span class="marge">console.log(arg + " n'est pas un nombre premier");</span></span><br>
+                                <span class="marge"><span class="marge">win = false;</span></span><br>
+                            <span class="marge">} else {</span><br>
+                                <span class="marge"><span class="marge">console.log(arg + " est un nombre premier");</span></span><br>
+                                <span class="marge"><span class="marge">win = true;</span></span><br>
+                            <span class="marge">}</span><br>
+                            <span class="marge">return win;</span><br>
+                        }<br>
+                        <br>
+                        premier(arg);<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
