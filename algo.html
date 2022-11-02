@@ -304,6 +304,33 @@
                         premier(arg);<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>Converti un heure en 12h/24h<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">if (process.argv[2] == undefined) {<br>
+                        <span class="marge">console.log(</span><br>
+                            <span class="marge"><span class="marge">"Veuillez indiquer au script, un heure au format 24. Exemple : node terre12.js 18:00"</span></span><br>
+                        <span class="marge">);</span><br>
+                        <span class="marge">return;</span><br>
+                    }<br>
+                    <br>
+                    const heure = process.argv[2].split(":");<br>
+                    const min = heure[1];<br>
+                    let hour;<br>
+                    <br>
+                    if (parseInt(heure[0]) > 12) {<br>
+                        <span class="marge">hour = heure[0] - 12;</span><br>
+                        <span class="marge">console.log(hour + ":" + min + "PM");</span><br>
+                    } else if (parseInt(heure[0]) === 12) {<br>
+                        <span class="marge">console.log(heure[0] + ":" + min + "PM");</span><br>
+                    } else if (parseInt(heure[0]) === 00) {<br>
+                        <span class="marge">hour = 12;</span><br>
+                        <span class="marge">console.log(hour + ":" + min + "AM");</span><br>
+                    } else {<br>
+                        <span class="marge">hour = heure[0];</span><br>
+                        <span class="marge">console.log(hour + ":" + min + "AM");</span><br>                        
+                    }<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
