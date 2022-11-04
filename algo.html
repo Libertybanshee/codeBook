@@ -370,6 +370,45 @@
                     }<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>Valeur du milieu<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">if (process.argv[2] == undefined) {<br>
+                        <span class="marge">console.log("Veuillez indiquer trois nombres en argument. Ex : terre14.js 24 85 69")</span><br>
+                        <span class="marge">return</span><br>
+                    } else if (process.argv.length != 5) {<br>
+                        <span class="marge">console.log("Veuillez indiquer trois nombres en argument. Ex : terre14.js 24 85 69")</span><br>
+                        <span class="marge">return</span><br>
+                    }<br>
+                    <br>
+                    /* Permet de trier les nombres passés en argument de façon décroissante */<br>
+                    <br>
+                    // Transformation Tableau de String en Tableau de Nombre<br>
+                    process.argv.shift(process.argv[0]); process.argv.shift(process.argv[1]);<br>
+                    <br>
+                    let argString = process.argv;<br>
+                    let argNumber = [];<br>
+                    <br>
+                    for (x = 0; x < argString.length; x++) {<br>
+                        <span class="marge">argNumber[x] = parseInt(argString[x]);</span><br>
+                    }<br>
+                    <br>
+                    let arg = argNumber;<br>
+                    let tab = [];<br>
+                    <br>
+                    let i = 0;<br>
+                    let j = 0;<br>
+                    <br>
+                    while(arg.length != tab.length) {<br>
+                        <span class="marge">if ((arg[i] <= tab[j]) || (tab[j] == undefined))  {</span><br> 
+                            <span class="marge"><span class="marge">tab.splice(j, 0, arg[i]);</span></span><br>
+                            <span class="marge"><span class="marge">i++;</span></span><br>
+                            <span class="marge"><span class="marge">j = 0;</span></span><br>
+                        <span class="marge">} else {</span><br>         
+                            <span class="marge"><span class="marge">j++;</span></span><br>
+                        <span class="marge">}</span><br>              
+                    }<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
