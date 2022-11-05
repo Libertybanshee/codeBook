@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Book</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios/50/000000/informatics-book.png">
+    <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+    <div>
+        <div id="liens">
+            <a href="index.html">Syntaxe Book</a>
+            <a href="algo.html">Algo Book</a>
+            <a href="#">Algo Terre</a>
+        </div>
+        <table class="table-style">
+            <thead>
+                <tr>
+                    <th>Problème</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alphabet <br>Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">var lettre = "abcdefghijklmnopqrstuvwxyz";<br>
+                        var alphabet = lettre.split("");<br>
+                        var affichez = "";<br>
+                        <br>
+                        for (i = 0; i < alphabet.length; i++) {<br>
+                            <span class="marge">affichez += alphabet[i];</span><br>
+                        }<br>
+                        <br>
+                        console.log("affichez = " + affichez);<br>
+                        <br>
+                        for (j = 0; j < alphabet.length; j++) {<br>
+                            <span class="marge">console.log(j + " = " + alphabet[j]);</span><br>
+                        }<br>
+                        <br>
+                        console.log(alphabet);<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nom du programme <br>Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const nom = process.argv[1];<br>
+                        var separe = nom.split("");<br>
+                        var affichez = "";<br>
+                        <br>
+                        for (i = 49; i < separe.length; i++) {<br>
+                            <span class="marge">affichez += separe[i];</span><br>
+                        }<br>
+                        <br>
+                        console.log(affichez);<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Afficheur d'argument <br>Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">var argument = process.argv.slice(2);<br>
+                        var affichez = "";<br>
+                        <br>
+                        for (i = 0; i < argument.length; i++) {<br>
+                            <span class="marge">affichez += argument[i];</span><br>
+                            <span class="marge">console.log(affichez);</span><br>
+                        }<br>
+                        var separation = affichez.split("");<br>
+                        <br>
+                        console.log(separation);<br>
+                        <br>
+                        separation -= separation[3];<br>
+                        console.log(separation + " la lettre a disparue ?");<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>L'alphabet à partir<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">var nom = process.argv[2];<br>
+                        var lettre = "abcdefghijklmnopqrstuvwxyz";<br>
+                        var affichez = "";<br>
+                        var a = "";<br>
+                        <br>
+                        for (j = 0; j < lettre.length; j++) {<br>
+                            <span class="marge">if (lettre[j] == nom) {</span><br>
+                            <span class="marge">a = j;</span><br>
+                            }<br>
+                        }<br>
+                        var separation = affichez.split("");<br>
+                        for (i = a; i < alphabet.length; i++) {<br>
+                            <span class="marge">affichez += alphabet[i];</span><br>
+                        }<br>
+                        console.log(affichez);<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>nombre pair ou impair<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const num = process.argv[2];<br>
+                        let res = num % 2<br>
+                        <br>
+                        if (isNaN(res)) {<br>
+                            <span class="marge">console.log("Tu ne me la mettras pas à l'envers")</span><br>
+                        } else if (res === 0) {<br>
+                            <span class="marge">console.log("pair")</span><br>
+                        } else {<br>
+                            <span class="marge">console.log("impair")</span><br>
+                        }<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>division euclidienne<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const num1 = parseInt(process.argv[2])<br>
+                        const num2 = parseInt(process.argv[3])<br>
+                        let res = num1 % num2<br>
+                        let div = (num1-res) / num2<br>
+                        <br>
+                        if (isNaN(num2) || isNaN(num1)) {<br>
+                            <span class="marge">console.log("Veuillez entrer deux chiffre comme argument")</span><br>
+                        } else if (num2 == 0 || num1 < num2) {<br>
+                            <span class="marge">console.log("Erreur")</span><br>
+                        } else {<br>
+                            <span class="marge">console.log("Resultat : " + div)</span><br>
+                            <span class="marge"> console.log("Reste : " + res)</span><br>
+                        }<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sens inversé<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const arg = process.argv[2];<br>
+                        let reverse = "";<br>
+                        <br>
+                        if (process.argv.length !== 3) {<br>
+                            <span class="marge">console.log("Veuillez indiquer un et un seul argument au script");</span><br>
+                        } else {<br>
+                            <span class="marge">const length = process.argv[2].length;</span><br>
+                            <span class="marge">for (let x = 1; x <= length; x++) {</span><br>
+                                <span class="marge"><span class="marge">reverse += arg[length - x];</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        console.log(reverse);<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Taille de l'argument<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const arg = process.argv;<br>
+                        const arg2 = process.argv[2]<br>
+                        const num = arg2 - 1;<br>
+                        <br>
+                        if (arg.length !== 3) {<br>
+                            <span class="marge">console.log("Veuillez indiquer au script, qu'un seul argument");</span><br>
+                        } else if (!isNaN(num)){<br>
+                            <span class="marge">console.log("Veuillez indiquer au script, un string en argument. Ex : node terre08.js \"Le ciel est bleu\"");</span><br>
+                        } else {<br>
+                            <span class="marge">console.log(arg2.length)</span><br>
+                        }<br>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Calculer la puissance d'un nombre<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const num = process.argv[2];<br>
+                        const exp = process.argv[3];<br>
+                        const chi = num - exp;<br>
+                        <br>
+                        if (isNaN(chi)) {<br>
+                            <span class="marge">console.log("Veuillez indiquer deux chiffres en argument");</span><br>
+                        } else if (num < 0 || exp < 0) {<br>
+                            <span class="marge">console.log("Veuillez indiquer un chiffre positif");</span><br>
+                        } else {<br>
+                            <span class="marge">console.log(num ** exp);</span><br>
+                        }<br>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>trouver la racine carré d'un nombre<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const arg = process.argv[2];<br>
+                        let start = arg;<br>
+                        let int = [];<br>
+                        let car;<br>
+                        let min;<br>
+                        let max;<br>
+                        let mil;<br>
+                        let stop = 0;<br>
+                        let val = [];<br>
+                        let y = 0;<br>
+                        <br>
+                        if (arg % 1 !== 0) {<br>
+                            <span class="marge">console.log("Veuillez indiquer un chiffre entier en argument");</span><br>
+                            <span class="marge">return;</span><br>
+                        }<br>
+                        <br>
+                        //Boucle qui détermine un interval assez proche de la racine carrée<br>
+                        while (int.length < 2) {<br>
+                            <span class="marge">start = Math.round(start / 2);</span><br>
+                            <span class="marge">if (start * start > arg) {</span><br>
+                                <span class="marge"><span class="marge">//Détermine la valeur haute de l'interval</span></span><br>
+                                <span class="marge"><span class="marge">int.shift();</span></span><br>
+                                <span class="marge"><span class="marge">int.push(start);</span></span><br>
+                            <span class="marge">} else if (start * start < arg) {</span><br>
+                                <span class="marge"><span class="marge">//Détermine la valeur basse de l'interval</span></span><br>
+                                <span class="marge"><span class="marge">int.unshift(start);</span></span><br>
+                            <span class="marge">} else {</span><br>
+                                <span class="marge"><span class="marge">console.log("La racine carré de " + arg + " est " + start);</span></span><br>
+                                <span class="marge"><span class="marge">return;</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        min = int[0];<br>
+                        max = int[1];<br>
+                        mil = Math.round((max - min) / 2);<br>
+                        car = min + mil;<br>
+                        <br>
+                        // Boucle qui détermine le carré du nombre en mettant au carré le millieu de l'intervale<br>
+                        if (car * car == arg) {<br>
+                            <span class="marge">console.log("La racine carré de " + arg + " est " + car);</span><br>
+                            <span class="marge">return;</span><br>
+                        }<br>
+                        <br>
+                        while (stop < 100) {<br>
+                            <span class="marge">if (car * car > arg) {</span><br>
+                                <span class="marge"><span class="marge">//Ajoute au millieu la moitié de la différence</span></span><br>
+                                <span class="marge"><span class="marge">mil /= 2; //entre le max et le min de l'interval</span></span><br>
+                                <span class="marge"><span class="marge">car -= Math.round(mil);</span></span><br>
+                                <span class="marge"><span class="marge">y++;</span></span><br>
+                                <span class="marge"><span class="marge">val[y] = car;</span></span><br>
+                            <span class="marge">} else if (car * car < arg) {</span><br>
+                                <span class="marge"><span class="marge">//Soustrait au miilieu la moitié de la différence</span></span><br>
+                                <span class="marge"><span class="marge">mil /= 2; //entre le max et min de l'interval</span></span><br>
+                                <span class="marge"><span class="marge">car += Math.round(mil);</span></span><br>
+                                <span class="marge"><span class="marge">y++;</span></span><br>
+                                <span class="marge"><span class="marge">val[y] = car;</span></span><br>
+                            <span class="marge">} else if (car * car == arg) {</span><br>
+                                <span class="marge"><span class="marge">console.log("La racine carré de " + arg + " est " + car);</span></span><br>
+                                <span class="marge"><span class="marge">return;</span></span><br>
+                            <span class="marge">}</span><br>
+                            <span class="marge">stop++;</span><br>
+                        }<br>
+                        <br>
+                        console.log(arg + " n'a pas de racine carrée");<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>nombre premier<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">const arg = process.argv[2];<br>
+                        const chi = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];<br>
+                        let res = 0;<br>
+                        let win;<br>
+                        <br>
+                        function premier(arg) {<br>
+                            <span class="marge">if (arg % 1 !== 0) {</span><br>
+                                <span class="marge"><span class="marge">console.log("Veuillez indiquer un chiffre entier en argument");</span></span><br>
+                                <span class="marge"><span class="marge">return;</span></span><br>
+                            <span class="marge">}</span><br>
+                        <br>
+                            <span class="marge">if (arg == 0 || arg == 1) {</span><br>
+                                <span class="marge"><span class="marge">console.log(arg + " n'est pas un nombre premier");</span></span><br>
+                                <span class="marge"><span class="marge">win = false;</span></span><br>
+                            <span class="marge">}</span><br>
+                        <br>
+                            <span class="marge">for (let x = 2; x < chi.length; x++) {</span><br>
+                                <span class="marge"><span class="marge">if ((arg / chi[x]) % 1 == 0) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">res++;</span></span></span>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                            <span class="marge">}</span><br>
+                        <br>
+                            <span class="marge">if (arg <= 10 && res > 1) {</span><br>
+                                <span class="marge"><span class="marge">console.log(arg + " n'est pas un nombre premier");</span></span><br>
+                                <span class="marge"><span class="marge">win = false;</span></span><br>
+                            <span class="marge">} else if (arg > 10 && res >= 1) {</span><br>
+                                <span class="marge"><span class="marge">console.log(arg + " n'est pas un nombre premier");</span></span><br>
+                                <span class="marge"><span class="marge">win = false;</span></span><br>
+                            <span class="marge">} else {</span><br>
+                                <span class="marge"><span class="marge">console.log(arg + " est un nombre premier");</span></span><br>
+                                <span class="marge"><span class="marge">win = true;</span></span><br>
+                            <span class="marge">}</span><br>
+                            <span class="marge">return win;</span><br>
+                        }<br>
+                        <br>
+                        premier(arg);<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Converti un heure en 24h/12h<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">if (process.argv[2] == undefined) {<br>
+                        <span class="marge">console.log(</span><br>
+                            <span class="marge"><span class="marge">"Veuillez indiquer au script, un heure au format 24. Exemple : node terre12.js 18:00"</span></span><br>
+                        <span class="marge">);</span><br>
+                        <span class="marge">return;</span><br>
+                    }<br>
+                    <br>
+                    const heure = process.argv[2].split(":");<br>
+                    const min = heure[1];<br>
+                    let hour;<br>
+                    <br>
+                    if (parseInt(heure[0]) > 12) {<br>
+                        <span class="marge">hour = heure[0] - 12;</span><br>
+                        <span class="marge">console.log(hour + ":" + min + "PM");</span><br>
+                    } else if (parseInt(heure[0]) === 12) {<br>
+                        <span class="marge">console.log(heure[0] + ":" + min + "PM");</span><br>
+                    } else if (parseInt(heure[0]) === 00) {<br>
+                        <span class="marge">hour = 12;</span><br>
+                        <span class="marge">console.log(hour + ":" + min + "AM");</span><br>
+                    } else {<br>
+                        <span class="marge">hour = heure[0];</span><br>
+                        <span class="marge">console.log(hour + ":" + min + "AM");</span><br>                        
+                    }<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Converti un heure en 12h/24h (inversé)<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">let heure;<br>
+                    let min;<br>
+                    let hour;<br>
+                    <br>
+                    if (process.argv[2] == undefined) {<br>
+                        <span class="marge">console.log(</span><br>
+                            <span class="marge"><span class="marge">"Veuillez indiquer au script, une heure au format 12 avec l'indication AM ou PM. Exemple : 12:00PM"</span></span><br>
+                        <span class="marge">);</span><br>
+                        <span class="marge">return;</span><br>
+                    }<br>
+                    <br>
+                    heure = process.argv[2].split(":");<br>
+                    min = heure[1];<br>
+                    <br>
+                    if (min[3] !== "M") {<br>
+                        <span class="marge">console.log(</span><br>
+                            <span class="marge"><span class="marge">"Veuillez indiquer au script, une heure au format 12 avec l'indication AM ou PM. Exemple : 12:00PM"</span></span><br>
+                        <span class="marge">);</span><br>
+                        <span class="marge">return;</span><br>
+                    } else if (heure[0] > 12) {<br>
+                        <span class="marge">console.log("Veuillez indiquer une heure au format 12");</span><br>
+                        <span class="marge">return;</span><br>
+                    }<br>
+                    <br>
+                    if (parseInt(heure[0]) === 12 && heure[1][2] === "A") {<br>
+                        <span class="marge">hour = 00;</span><br>
+                        <span class="marge">min = [heure[1].slice(0, -2)];</span><br> 
+                        <span class="marge">console.log(hour + ":" + min);</span><br>  
+                    } else if (heure[1][2] === "P" && parseInt(heure[0]) !== 12) {<br> 
+                        <span class="marge">hour = parseInt(heure[0]) + 12;</span><br>
+                        <span class="marge">console.log(hour + ":" + min.slice(0, -2));</span><br>                   
+                    } else {<br>   
+                        <span class="marge">hour = heure[0];</span><br>
+                        <span class="marge">console.log(hour + ":" + min.slice(0, -2));</span><br>                   
+                    }<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Valeur du milieu<br> Epreuve de la terre<br> - Javascript -</td>
+                    <td style="text-align: left;">if (process.argv[2] == undefined) {<br>
+                        <span class="marge">console.log("Veuillez indiquer trois nombres en argument. Ex : terre14.js 24 85 69")</span><br>
+                        <span class="marge">return</span><br>
+                    } else if (process.argv.length != 5) {<br>
+                        <span class="marge">console.log("Veuillez indiquer trois nombres en argument. Ex : terre14.js 24 85 69")</span><br>
+                        <span class="marge">return</span><br>
+                    }<br>
+                    <br>
+                    /* Permet de trier les nombres passés en argument de façon décroissante */<br>
+                    <br>
+                    // Transformation Tableau de String en Tableau de Nombre<br>
+                    process.argv.shift(process.argv[0]); process.argv.shift(process.argv[1]);<br>
+                    <br>
+                    let argString = process.argv;<br>
+                    let argNumber = [];<br>
+                    <br>
+                    for (x = 0; x < argString.length; x++) {<br>
+                        <span class="marge">argNumber[x] = parseInt(argString[x]);</span><br>
+                    }<br>
+                    <br>
+                    let arg = argNumber;<br>
+                    let tab = [];<br>
+                    <br>
+                    let i = 0;<br>
+                    let j = 0;<br>
+                    <br>
+                    while(arg.length != tab.length) {<br>
+                        <span class="marge">if ((arg[i] <= tab[j]) || (tab[j] == undefined))  {</span><br> 
+                            <span class="marge"><span class="marge">tab.splice(j, 0, arg[i]);</span></span><br>
+                            <span class="marge"><span class="marge">i++;</span></span><br>
+                            <span class="marge"><span class="marge">j = 0;</span></span><br>
+                        <span class="marge">} else {</span><br>         
+                            <span class="marge"><span class="marge">j++;</span></span><br>
+                        <span class="marge">}</span><br>              
+                    }<br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
