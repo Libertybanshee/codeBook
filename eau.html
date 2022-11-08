@@ -12,9 +12,9 @@
     <div>
         <div id="liens">
             <a href="index.html">Syntaxe Book</a>
-            <a href="#">Algo Book</a>
+            <a href="algo.html">Algo Book</a>
             <a href="terre.html">Algo Terre</a>
-            <a href="eau.html">Algo Eau</a>
+            <a href="#">Algo Eau</a>
         </div>
         <table class="table-style">
             <thead>
@@ -25,30 +25,74 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Random <br> via une fonction<br> - Javascript -</td>
-                    <td style="text-align: left;">function rnd(min, max) {<br>
-                        <span class="marge">min = Math.ceil(min);</span><br>
-                        <span class="marge">max = Math.floor(max);</span><br>
-                        <span class="marge">return Math.floor(Math.random() * (max - min)) + min;</span><br>
-                    }</td>
-                </tr>
-                <tr>
-                    <td>Dans un hangar <br> cherchez le doublon d'un colis<br> - LUA -</td>
-                    <td style="text-align: left;">hangar = {05, 17, 36, 98, 78, 14, 11, 87, 45, 69, 78, 14, 11, 24, 15, 98, 87, 25, 01, 65, 07}<br>
-                        -- trouvez un doublon du colis 11 puis arrêter la recherche<br>
+                    <td>- 1 -<br>Combinaise de 3 chiffres<br>Epreuve de l'eau'<br> - Javascript -</td>
+                    <td style="text-align: left;">let chiffre = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];<br>
+                        let grp = []; let tab = []; let sol = [];<br>
                         <br>
-                        cherchez = 11 <br>
-                        trouvez = 0<br>
+                        //Fonction qui fait des groupes de trois chiffre différents<br>
+                        let groupe = (chiffre) => {<br>
+                            <span class="marge">let n = 0</span><br>
+                            <span class="marge">for (let x = 0; x < chiffre.length - 2; x++) {</span><br>
+                                <span class="marge"><span class="marge">for (let y = 0; y < chiffre .length; y++) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">for (let z = 0; z < chiffre.length; z++) {</span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">if (chiffre[x] !== chiffre[y] && chiffre[y] !== chiffre[z] && chiffre[x] !== chiffre[z]) {</span></span></span></span><br>
+                                            <span class="marge"><span class="marge"><span class="marge"><span class="marge"><span class="marge">grp[n] = [chiffre[x], chiffre[y], chiffre[z]]</span></span></span></span></span><br>
+                                            <span class="marge"><span class="marge"><span class="marge"><span class="marge"><span class="marge">n++</span></span></span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">}</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">}</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
                         <br>
-                        -- Parcourir la liste pour trouver la variable 11 avec une boucle for<br>
-                        for i, v in ipairs(hangar) do<br>
-                        <span class="marge">if v == cherchez then</span><br>
-                        <span class="marge"><span class="marge">trouvez = trouvez + 1</span></span><br>
-                            <span class="marge">elseif trouvez == 2 then</span><br>
-                                <span class="marge"><span class="marge">print("Colis en double !!")</span></span><br>
-                                <span class="marge"><span class="marge"> break</span></span><br>
-                            <span class="marge">end</span><br>
-                        end
+                        //Fonction qui tri les groupes de manière croissante<br>
+                        let tri = (grp) => {<br>
+                            <span class="marge">for (let t = 0; t < grp.length; t++) {</span><br>
+                                <span class="marge"><span class="marge">let sol = grp[t];</span></span><br>
+                                <span class="marge"><span class="marge">let res = [];</span></span><br>
+                                <span class="marge"><span class="marge">let i = 0;</span></span><br>
+                                <span class="marge"><span class="marge">let j = 0;</span></span><br>
+                                <br>
+                                <span class="marge"><span class="marge">while(sol.length != res.length) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">if ((sol[i] <= res[j]) || (res[j] == undefined))  {</span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">res.splice(j, 0, sol[i]);</span></span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">i++;</span></span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">j = 0;</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">} else {</span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">j++;</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">}</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                                <span class="marge"><span class="marge">tab.push(res)</span></span><br>
+                                <span class="marge"><span class="marge">tab.sort()</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        //Gestion des erreurs<br>
+                        if (process.argv.length > 2) {<br>
+                            <span class="marge">console.log("Le script n'a pas besoin d'argument pour fonctionner.")</span><br>
+                            <span class="marge">return</span><br>
+                        }<br>
+                        <br>
+                        //Résolution du problème<br>
+                        groupe(chiffre)<br>
+                        tri(grp)<br>    
+                        sol.push(tab[0])<br>  
+                        <br>
+                        //Boucle qui supprime les doublons<br>  
+                        for (let a = 0; a < tab.length; a++) {<br>  
+                            <span class="marge">for (let b = 0; b < tab.length; b++) {</span><br>
+                                <span class="marge"><span class="marge">if (JSON.stringify(tab[a]) == JSON.stringify(tab[b])) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">tab.splice(a, 1)</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        //Boucle qui regroupe les 3 chiffres<br>  
+                        for (a = 0; a < tab.length; a++) {<br> 
+                            <span class="marge">tab[a] = tab[a].join('')</span><br>
+                        }<br>
+                        <br>
+                        //Affichage du résultat<br>  
+                        console.log(tab.toString())<br>
                     </td>
                 </tr>
             </tbody>
