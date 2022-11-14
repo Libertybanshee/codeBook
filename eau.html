@@ -138,6 +138,30 @@
                         console.log(grp)<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 3 -<br>Affichez à l'envers<br>Epreuve de l'eau<br>- Javascript -</td>
+                    <td style="text-align: left;">//Script qui affiche les arguments à l'envers<br>
+                        <br>
+                        // Function qui parcour un tableau à l'envers et qui affiche chaque index<br>
+                        let reverse = (tab) => {<br>
+                            <span class="marge">for (let a = tab.length - 1; a >= 0; a--) {</span><br>
+                                <span class="marge"><span class="marge">console.log(tab[a])</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        //Gestion d'erreur<br>
+                        if (process.argv.length < 4) {<br>
+                            <span class="marge">console.log("Veuillez indiquer au moins deux arguments au script")</span><br>
+                        }<br>
+                        <br>
+                        //Parsing<br>
+                        let arg = process.argv<br>
+                        <br>
+                        //Résolution du problème et Affichage<br>
+                        arg.splice(0, 2)<br>
+                        reverse(arg)<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
