@@ -162,6 +162,36 @@
                         reverse(arg)<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 4 -<br>n-ème élément de la suite de Fibonacci<br>Epreuve de l'eau<br>- Javascript -</td>
+                    <td style="text-align: left;">//Fonction qui calcul la suite de Fibonacci<br>
+                        let fibo = (tab) => {<br>
+                            <span class="marge">for (let a = 0; a != stop; a++) {</span><br>
+                                <span class="marge"><span class="marge">let next = tab[a] + tab[a + 1];</span></span><br>
+                                <span class="marge"><span class="marge">tab.push(next)</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        //Gestion d'erreur<br>
+                        if (process.argv.length != 3) {<br>
+                            <span class="marge">console.log("Veuillez indiquer qu'un seul argument au script")</span><br>
+                            <span class="marge">return</span><br>
+                        } else if (Number(process.argv[2]) % 1 != 0) {<br>
+                            <span class="marge">console.log("Veuillez indiquer un nombre en argument")</span><br>
+                            <span class="marge">return</span><br>
+                        }<br>
+                        <br>
+                        //Parsing<br>
+                        let start = [0, 1];<br>
+                        let stop = process.argv[2]<br>
+                        <br>
+                        //Résolution du problème<br>
+                        fibo(start)<br>
+                        <br>
+                        //Affichage du résultat<br>
+                        console.log(start[stop])<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
