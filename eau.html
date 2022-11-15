@@ -192,6 +192,39 @@
                         console.log(start[stop])<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 5 -<br>1er supérieur à l'arguments<br>- Javascript -</td>
+                    <td style="text-align: left;">//Gestion d'erreur<br>
+                        if (process.argv.length != 3) {<br>
+                            <span class="marge">console.log("Veuillez indiquer un nombre en argument")</span><br>
+                            <span class="marge">return</span><br>
+                        }<br>
+                        <br>
+                        //Parsing<br>
+                        let arg = process.argv[2]<br>
+                        const nb = process.argv[2]<br>
+                        <br>
+                        let fs = require('fs')<br>
+                        let vm = require('vm')<br>
+                        <br>
+                        //Récupération du script qui détermine si un nombre est premier<br>
+                        let entier = fs.readFileSync("../../Epreuve_Terre/Terre11/terre11.js", "utf8")<br>
+                        <br>
+                        //Exécution du script<br>
+                        vm.runInThisContext(entier)<br>
+                        <br>
+                        premier(arg)<br>
+                        //Execution de la fonction du script tant qu'un nombre premier n'est pas trouvé<br>
+                        while (win != true) {<br>
+                            <span class="marge">arg = Number(arg) + 1</span><br>
+                            <span class="marge">premier(arg)</span><br>
+                            <span class="marge">res = 0</span><br>
+                        }<br>
+                        <br>
+                        //Affichage<br>
+                        console.log("Le premier nombre premier supérieur à " + nb + " est " + arg)<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
