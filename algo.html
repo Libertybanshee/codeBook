@@ -51,6 +51,37 @@
                         end
                     </td>
                 </tr>
+                <tr>
+                    <td>Afficher 100 rectangles<br>aléatoirement<br> - LUA / TIC-80 -</td>
+                    <td style="text-align: left;">x = 100<br>
+                        listRect = {}<br>
+                        <br>
+                        while (#listRect < x) do<br>
+                            <span class="marge">local r = {}</span><br>
+                            <span class="marge">r.larg = math.random(1,25)</span><br>
+                            <span class="marge">r.haut = math.random(1,25)</span><br>
+                            <span class="marge">r.x = math.random(0,239 - r.larg)</span><br>
+                            <span class="marge">r.y = math.random(0,135 - r.haut)</span><br>
+                            <span class="marge">r.color = math.random(1,15) </span><br>
+                        <br>
+                            <span class="marge">table.insert(listRect, r)</span><br>
+                        end<br>
+                        <br>
+                        function TIC()<br>
+                        <br>
+                            <span class="marge">cls(0)</span><br>
+                            <br>
+                            <span class="marge">for i,v in ipairs(listRect) do</span><br>
+                                <span class="marge"><span class="marge">rect(v.x, v.y, v.larg, v.haut, v.color)</span></span><br>
+                            <span class="marge">end</span><br>
+                        end
+                    </td>
+                </tr>
+                <tr>
+                    <td>Afficher 100 rectangles<br>aléatoirement<br>sans qu'ils se touchent<br> - LUA / TIC-80 -</td>
+                    <td style="text-align: left;">
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
