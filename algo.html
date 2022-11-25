@@ -79,7 +79,45 @@
                 </tr>
                 <tr>
                     <td>Afficher 100 rectangles<br>aléatoirement<br>sans qu'ils se touchent<br> - LUA / TIC-80 -</td>
-                    <td style="text-align: left;">
+                    <td style="text-align: left;">x = 100<br>
+                        listRect = {}<br>
+                        <br>
+                        function CheckCollision(x1,y1,w1,h1, x2,y2,w2,h2)<br>
+                        <span class="marge">return x1 < x2+w2 and</span><br>
+                            <span class="marge"><span class="marge">x2 < x1+w1 and</span></span><br>
+                            <span class="marge"><span class="marge">y1 < y2+h2 and</span></span><br>
+                            <span class="marge"><span class="marge">y2 < y1+h1</span></span><br>
+                        end<br>
+                        <br>
+                        while (#listRect < x) do<br>
+                            <span class="marge">local r = {}</span><br>
+                            <span class="marge">local Collision = true</span><br>
+                            <br>
+                            <span class="marge">r.larg = math.random(1,25)</span><br>
+                            <span class="marge">r.haut = math.random(1,25)</span><br>
+                            <span class="marge">r.x = math.random(0,239 - r.larg)</span><br>
+                            <span class="marge">r.y = math.random(0,135 - r.haut)</span><br>
+                            <span class="marge">r.color = math.random(1,15) </span><br>
+                        <br>
+                            <span class="marge">for i,v in ipairs(listRect) do</span><br>
+                                <span class="marge"><span class="marge">if CheckCollision(r.x,r.y,r.larg,r.haut,v.x,v.y,v.larg,v.haut) then</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">Collision = false</span></span></span><br>
+                                <span class="marge"><span class="marge">end</span></span><br>
+                            <span class="marge">end</span><br>
+                            <br>
+                            <span class="marge">if Collision then</span><br>
+                                <span class="marge"><span class="marge">table.insert(listRect, r)</span></span><br>
+                            <span class="marge">end</span><br>
+                        end<br>
+                        <br>
+                        function TIC()<br>
+                        <br>
+                            <span class="marge">cls(0)</span><br>
+                            <br>
+                            <span class="marge">for i,v in ipairs(listRect) do</span><br>
+                                <span class="marge"><span class="marge">rect(v.x, v.y, v.larg, v.haut, v.color)</span></span><br>
+                            <span class="marge">end</span><br>
+                        end
                     </td>
                 </tr>
             </tbody>
