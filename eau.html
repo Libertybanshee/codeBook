@@ -225,6 +225,44 @@
                         console.log("Le premier nombre premier supérieur à " + nb + " est " + arg)<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 5 -<br>affiche si le dernier argument <br>est présent dans les précédents<br>- Javascript -</td>
+                    <td style="text-align: left;">//Function<br>
+                        let string = (tab) => {<br>
+                            <span class="marge">for (let a = 0; a < tab.length - 1; a++) {</span><br>
+                                <span class="marge"><span class="marge">if (JSON.stringify(tab[tab.length - 1]) == JSON.stringify(tab[a])) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">win = true</span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">i = a</span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">return</span></span></span><br>
+                                <span class="marge"><span class="marge">} else {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">win = false</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        //Gestion d'erreur<br>
+                        if (process.argv.length < 4) {<br>
+                            <span class="marge">console.log("Veuillez indiquer au minimum, deux arguments")</span><br>
+                            <span class="marge">return</span><br>
+                        }<br>
+                        <br>
+                        //Parsing<br>
+                        let arg = process.argv<br>
+                        arg.splice(0, 2)<br>
+                        let win<br>
+                        let i<br>
+                        <br>
+                        //Résolution du problème<br>
+                        string(arg)<br>
+                        <br>
+                        //Affichage<br>
+                        if (win == false) {<br>
+                            <span class="marge">console.log(arg[arg.length - 1] + " n'est pas présent")</span><br>
+                        } else {<br>
+                            <span class="marge">console.log(arg[arg.length - 1] + " est présent à l'index " + i)</span><br>
+                        }<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
