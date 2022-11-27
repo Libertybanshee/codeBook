@@ -226,7 +226,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>- 5 -<br>affiche si le dernier argument <br>est présent dans les précédents<br>- Javascript -</td>
+                    <td>- 6 -<br>affiche si le dernier argument <br>est présent dans les précédents<br>- Javascript -</td>
                     <td style="text-align: left;">//Function<br>
                         let string = (tab) => {<br>
                             <span class="marge">for (let a = 0; a < tab.length - 1; a++) {</span><br>
@@ -261,6 +261,48 @@
                         } else {<br>
                             <span class="marge">console.log(arg[arg.length - 1] + " est présent à l'index " + i)</span><br>
                         }<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>- 7 -<br>affiche la différence minimum<br>absolu d'une liste<br>- Javascript -</td>
+                    <td style="text-align: left;">//Gestion d'erreur<br>
+                        if(process.argv.length < 4) {<br>
+                            <span class="marge">console.log('Veuillez indiquer au minimum deux nombres en argument')</span><br>
+                            <span class="marge">return</span><br>
+                        }<br>
+                        process.argv.splice(0, 2)<br>
+                        for (i in process.argv) {<br>
+                            <span class="marge">if (process.argv[i] % 1 != 0) {</span><br>
+                                <span class="marge"><span class="marge">console.log("Veuillez indiquer seulement des nombres en argument")</span></span><br>
+                                <span class="marge"><span class="marge">return</span></span><br>
+                            <span class="marge"> }</span><br>
+                        }<br>
+                        <br>
+                        //Parsing<br>
+                        let arg = process.argv<br>
+                        let sol<br>
+                        <br>
+                        //Résolution du problème<br>
+                        for (let a = 0; a < arg.length; a++) {<br>
+                            <span class="marge">for (let b = 0; b < arg.length; b++) {</span><br>
+                                <span class="marge"><span class="marge">//Différence entre toutes les valeurs du tableau</span></span><br>
+                                <span class="marge"><span class="marge">let dif = arg[a] - arg[b]</span></span><br>
+                                <span class="marge"><span class="marge">//Mise du résultat au positif</span></span><br>
+                                <span class="marge"><span class="marge">let positif</span></span><br>
+                                <span class="marge"><span class="marge">if (dif < 0) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">positif = 0 - dif</span></span></span><br>
+                                <span class="marge"><span class="marge">} else if (dif > 0) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">positif = dif</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                                <span class="marge"><span class="marge">//Si diférence plus petite affecter dans solution</span></span><br>
+                                <span class="marge"><span class="marge">if (positif < sol || sol == undefined) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">sol = positif</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        //Affichage<br>
+                        console.log(sol)<br>
                     </td>
                 </tr>
             </tbody>
