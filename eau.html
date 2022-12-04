@@ -346,6 +346,55 @@
                         console.log(arg);<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 9 -<br>tri par sélection<br>- Javascript -</td>
+                    <td style="text-align: left;">//Function du tri par sélection<br>
+                        function my_select_sort(tab) {<br>
+                            <span class="marge">let min</span><br>
+                            <span class="marge">for (let a = 0; a < tab.length; a++) {</span><br>
+                                <span class="marge"><span class="marge">min = a;</span></span><br>
+                                <span class="marge"><span class="marge">for (let b = a + 1; b < tab.length; b++) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">if (tab[b] < tab[min]) {</span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">min = b</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">}</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                                <span class="marge"><span class="marge">let small = tab[a]</span></span><br>
+                                <span class="marge"><span class="marge">tab[a] = tab[min]</span></span><br>
+                                <span class="marge"><span class="marge">tab[min] = small</span></span><br>
+                            <span class="marge">}</span><br>
+                            <span class="marge">return tab</span><br>
+                        }<br>
+                        //Function qui transforme les string en nombres<br>
+                        function num(tab) {<br>
+                            <span class="marge">for (let c = 0; c < tab.length; c++) {</span><br>
+                                <span class="marge"><span class="marge">tab[c] = Number(tab[c])</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        //Gestion d'erreurs<br>
+                        if(process.argv.length < 4) {<br>
+                            <span class="marge">console.log('Veuillez indiquer au minimum deux nombres en argument')</span><br>
+                            <span class="marge">return</span><br>
+                        }<br>
+                        process.argv.splice(0, 2)<br>
+                        for (i in process.argv) {<br>
+                            <span class="marge">if (process.argv[i] % 1 != 0) {</span><br>
+                                <span class="marge"><span class="marge">console.log("Veuillez indiquer seulement des nombres en argument")</span></span><br>
+                                <span class="marge"><span class="marge">return</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        <br>
+                        //Parsing<br>
+                        let arg = process.argv<br>
+                        <br>
+                        //Résolution du problème<br>
+                        num(arg)<br>
+                        my_select_sort(arg)<br>
+                        <br>
+                        //Affichage<br>
+                        console.log(arg);<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
