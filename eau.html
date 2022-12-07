@@ -395,6 +395,64 @@
                         console.log(arg);<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 10 -<br>tri les arguments<br>suivant l'ordre Ascii<br>- Javascript -</td>
+                    <td style="text-align: left;">//Function qui tri les argument suivant l'ordre Ascii<br>
+                        let triAscii = (tab) => {<br>
+                            <span class="marge">let num = []; let stg = []; let tabAscii = [];</span><br>
+                            <br>
+                            <span class="marge">// Function qui sépare les nombres et string</span><br>
+                            <span class="marge">let part = () => {</span><br>
+                                <span class="marge"><span class="marge">for (let a = 0; a < tab.length; a++) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">if (tab[a] % 1 == 0) {</span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">num.push(tab[a])</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">} else {</span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">stg.push(tab[a])</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">}</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                            <span class="marge">}</span><br>
+                        <br>
+                        //Function qui tri les tableaux<br>
+                            <span class="marge">let tri = (tab) => {</span><br>
+                                <span class="marge"><span class="marge">let newtab = []; let i = 0; let j = 0;</span></span><br>
+                                <span class="marge"><span class="marge">for (let b = 0; b < tab.length; b++) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">while(tab.length != newtab.length) {</span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">if ((tab[i] <= newtab[j]) || (newtab[j] == undefined))  {</span></span></span></span><br>
+                                            <span class="marge"><span class="marge"><span class="marge"><span class="marge"><span class="marge">newtab.splice(j, 0, tab[i]);</span></span></span></span></span><br>
+                                            <span class="marge"><span class="marge"><span class="marge"><span class="marge"><span class="marge">i++;</span></span></span></span></span><br>
+                                            <span class="marge"><span class="marge"><span class="marge"><span class="marge"><span class="marge">j = 0;</span></span></span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">} else {</span></span></span></span><br>
+                                            <span class="marge"><span class="marge"><span class="marge"><span class="marge"><span class="marge">j++;</span></span></span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">}</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">}</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                                <span class="marge"><span class="marge">return newtab</span></span><br>
+                            <span class="marge">part()</span><br>
+                            <span class="marge">tri(num)</span><br>
+                            <span class="marge">tri(stg)</span><br>
+                            <br>
+                            <span class="marge">//Assembler les tableaux</span><br>
+                            <span class="marge">tabAscii = tri(num).concat(tri(stg))</span><br>
+                            <span class="marge">return tabAscii</span><br>
+                        }<br>
+                        <br>
+                        //Gestion d'erreur<br>
+                        if(process.argv.length < 4) {<br>
+                            <span class="marge">console.log('Veuillez indiquer au minimum deux arguments')</span><br>
+                            <span class="marge">return</span><br>
+                        }<br>
+                        <br>
+                        //Parsing<br>
+                        let arg = process.argv<br>
+                        arg.splice(0, 2)<br>
+                        <br>
+                        //Résolution du problème<br>
+                        triAscii(arg)<br>
+                        <br>
+                        //Affichage<br>
+                        console.log(triAscii(arg))<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
