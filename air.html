@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Book</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios/50/000000/informatics-book.png">
+    <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+    <div>
+        <div id="liens">
+            <a href="index.html">Syntaxe Book</a>
+            <a href="algo.html">Algo Book</a>
+            <a href="terre.html">Algo Terre</a>
+            <a href="eau.html">Algo Eau</a>
+            <a href="#">Algo Air</a>
+        </div>
+        <table class="table-style">
+            <thead>
+                <tr>
+                    <th>Problème</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>- 1 -<br>l'argument qui n'a pas <br> de jumeaux<br> - Javascript -</td>
+                    <td style="text-align: left;">//Parsing<br>
+                        let arg = process.argv;<br>
+                        arg.splice(0, 2);<br>
+                        <br>
+                        //Parsing<br>
+                        <br>
+                        //Function / résolution du problème<br>
+                        const twin = (arg) => {<br>
+                            <span class="marge">if (arg.length < 3) {</span><br>
+                                <span class="marge"><span class="marge">console.log("Veuillez indiquer au minimum, trois arguments au script, dont deux identiques. Example : node air01.js 1 5 1");</span></span><br>
+                                <span class="marge"><span class="marge">console.log(arg);</span></span><br>
+                                <span class="marge"><span class="marge">return;</span></span><br>
+                            <span class="marge">}</span><br>
+                            <br>
+                            <span class="marge">let value = arg.shift();</span><br>
+                            <span class="marge">let flag = true;</span><br>
+                            <span class="marge">let solution = [];</span><br>
+                            <br>
+                            <span class="marge">while (arg.length !== 0) {</span><br>
+                                <span class="marge"><span class="marge">for (let x = 0; x < arg.length; x++) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">if (value === arg[x]) {</span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">arg.splice(x, 1);</span></span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">x--;</span></span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">flag = false;</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">}</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                            <span class="marge">if (flag) {</span><br>
+                                <span class="marge"><span class="marge">solution.push(value);</span></span><br>
+                            <span class="marge">}</span><br>
+                            <span class="marge">value = arg.shift();</span><br>
+                            <span class="marge">flag = true;</span><br>
+                            <span class="marge">x = 0;</span><br>
+                        }<br>
+                        for (i in solution) {<br>
+                            <span class="marge">if (value === solution || value === undefined) {</span><br>
+                                <span class="marge"><span class="marge">return solution;</span></span><br>
+                            <span class="marge">}</span><br>
+                        }<br>
+                        solution.push(value);<br>
+                        console.log(solution);<br>
+                        return solution;<br>
+                    };<br>
+                    //Affichage<br>
+                    twin(arg);<br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
