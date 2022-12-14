@@ -69,8 +69,74 @@
                         console.log(solution);<br>
                         return solution;<br>
                     };<br>
+                    <br>
                     //Affichage<br>
                     twin(arg);<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>- 2 -<br>supprime les caractères<br>identiques adjacents<br> - Javascript -</td>
+                    <td style="text-align: left;">//Gestion d'erreur<br>
+                        if (process.argv.length !== 3) {<br>
+                            <span class="marge">console.log(</span><br>
+                                <span class="marge"><span class="marge">'Veuillez indiquer une seule phrase au script. Exemple : node air02.js "J\'aime le chocolat,,    avec des crevettes !!!!"'</span></span><br>
+                            <span class="marge">);</span><br>
+                            <span class="marge">return;</span><br>
+                        <br>
+                        }<br>
+                        <br>
+                        //Parsing<br>
+                        let phrase = process.argv;<br>
+                        phrase.splice(0, 2);<br>
+                        phrase = phrase.toString();<br>
+                        //console.log(phrase);<br>
+                        <br>
+                        //Function / Résolution du problème<br>
+                        <br>
+                        const recurrence = (phrase) => {<br>
+                            <span class="marge">let c = 0;</span><br>
+                            <span class="marge">const character = [</span><br>
+                                <span class="marge"><span class="marge">" ",</span></span><br>
+                                <span class="marge"><span class="marge">",",</span></span><br>
+                                <span class="marge"><span class="marge">";",</span></span><br>
+                                <span class="marge"><span class="marge">":",</span></span><br>
+                                <span class="marge"><span class="marge">"!",</span></span><br>
+                                <span class="marge"><span class="marge">"?",</span></span><br>
+                                <span class="marge"><span class="marge">".",</span></span><br>
+                                <span class="marge"><span class="marge">"/",</span></span><br>
+                                <span class="marge"><span class="marge">"§",</span></span><br>
+                                <span class="marge"><span class="marge">"-",</span></span><br>
+                                <span class="marge"><span class="marge">"_",</span></span><br>
+                                <span class="marge"><span class="marge">"%",</span></span><br>
+                                <span class="marge"><span class="marge">"~",</span></span><br>
+                                <span class="marge"><span class="marge">"#",</span></span><br>
+                                <span class="marge"><span class="marge">"@",</span></span><br>
+                                <span class="marge"><span class="marge">"*",</span></span><br>
+                                <span class="marge"><span class="marge">"-",</span></span><br>
+                                <span class="marge"><span class="marge">"+",</span></span><br>
+                                <span class="marge"><span class="marge">">",</span></span><br>
+                                <span class="marge"><span class="marge">"<",</span></span><br>
+                                <span class="marge"><span class="marge">"'",</span></span><br>
+                            <span class="marge">];</span><br>
+                            <span class="marge">while (c !== phrase.length) {</span><br>
+                                <span class="marge"><span class="marge">let length = phrase.length;</span></span><br>
+                                <span class="marge"><span class="marge">for (let x = 0; x < character.length; x++) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">if (phrase[c] === character[x] && phrase[c] === phrase[c + 1]) {</span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">phrase = phrase.slice(0, c) + phrase.slice(c + 1, length);</span></span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">length = phrase.length;</span></span></span></span><br>
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">c -= 1;</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">}</span></span></span><br>
+                                <span class="marge"><span class="marge">}</span></span><br>
+                                <span class="marge"><span class="marge">x = 0;</span></span><br>
+                                <span class="marge"><span class="marge">c += 1;</span></span><br>
+                            <span class="marge">}</span><br>
+                            <span class="marge">return phrase;</span><br>
+                        };<br>
+                        <br>
+                        //Afichage<br>
+                        <br>
+                        console.log(recurrence(phrase));<br>
+                        return recurrence(phrase);<br>
                     </td>
                 </tr>
             </tbody>
