@@ -139,6 +139,56 @@
                         return recurrence(phrase);<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 3 -<br>insert un entier au bon endroit<br>dans une liste d'entier triées<br> - Javascript -</td>
+                    <td style="text-align: left;">// Gestion d'erreur<br>
+                        let arg = process.argv;<br>
+                        arg.splice(0, 2);<br>
+                        const liste = arg.map((num) => Number(num));<br>
+                        <br>
+                        if (liste.length < 3) {<br>
+                            <span class="marge">console.log(</span><br>
+                                <span class="marge"><span class="marge">"Veuillez indiquer au moins 3 entiers naturels au script. Les premiers représentent une liste triée et le dernier un entier à introduire dans la liste"</span></span><br>
+                            <span class="marge">);</span><br>
+                            <span class="marge">return;</span><br>
+                        }<br>
+                        <br>
+                        for (let a = 0; a < liste.length; a++) {<br>     
+                            <span class="marge">if (liste[a] % 1 !== 0) {</span><br>     
+                                <span class="marge"><span class="marge">console.log(</span></span><br>        
+                                    <span class="marge"><span class="marge"><span class="marge">"Veuillez indiquer seulement des entiers naturel au script. Exemple : node air03.js 1 2 3 5 4 "</span></span></span><br>     
+                                <span class="marge"><span class="marge">);</span></span><br>   
+                                <span class="marge"><span class="marge">return;</span></span><br>  
+                            <span class="marge">}</span><br>   
+                        }<br>
+                        <br>
+                        for (let b = 1; b < liste.length - 1; b++) {<br>
+                            <span class="marge">if (liste[b] < liste[b - 1]) {</span><br>  
+                                <span class="marge"><span class="marge">console.log("La liste d'entier n'est pas tiée par ordre croissant.");</span></span><br>   
+                                <span class="marge"><span class="marge">return;</span></span><br>  
+                            <span class="marge">}</span><br>   
+                        }<br>
+                        <br>
+                        // Parsing<br>
+                        const intenger = liste.pop();<br>
+                        const intenger_list = liste;<br>
+                        <br>
+                        // Function / Résolution du problème<br>
+                        const insertion = (intenger_list, intenger) => {<br>
+                            <span class="marge">for (let i = 0; i < intenger_list.length; i++) {</span><br>  
+                                <span class="marge"><span class="marge">if (intenger < intenger_list[i]) {</span></span><br>         
+                                    <span class="marge"><span class="marge"><span class="marge">intenger_list.splice(i, 0, intenger);</span></span></span><br>   
+                                    <span class="marge"><span class="marge"><span class="marge">return intenger_list;</span></span></span><br>  
+                                <span class="marge"><span class="marge">}</span></span><br>   
+                            <span class="marge">}</span><br>     
+                            <span class="marge">intenger_list.push(intenger);</span><br>   
+                            <span class="marge">return intenger_list;</span><br>   
+                        };<br>
+                        <br>
+                        // Affichage<br>
+                        console.log(insertion(intenger_list, intenger));<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
