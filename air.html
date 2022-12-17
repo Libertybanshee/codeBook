@@ -189,6 +189,61 @@
                         console.log(insertion(intenger_list, intenger));<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 4 -<br>fusionne deux listes de nombres<br>triées de manière croissantes<br> - Javascript -</td>
+                    <td style="text-align: left;">// Parsing<br>
+                        let arg = process.argv;<br>
+                        arg.splice(0, 2);<br>
+                        <br>
+                        let listeA = arg.slice(0, arg.indexOf("fusion"));<br>
+                        let listeB = arg.slice(arg.indexOf("fusion") + 1, arg.length);<br>
+                        <br>
+                        // Function<br>
+                        const sort = (liste) => {<br>
+                            <span class="marge">liste = arg.map((num) => Number(num));</span><br>   
+                            <span class="marge">for (let x = 1; x < liste.length; x++) {</span><br>   
+                                <span class="marge"><span class="marge">if (liste[x] < liste[x - 1]) {</span></span><br>    
+                                    <span class="marge"><span class="marge"><span class="marge">console.log(</span></span></span><br>  
+                                        <span class="marge"><span class="marge"><span class="marge"><span class="marge">"La liste " + liste + " n'est pas triée de manière croissante"</span></span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">);</span></span></span><br>  
+                                    <span class="marge"><span class="marge"><span class="marge">return true;</span></span></span><br>  
+                                <span class="marge"><span class="marge">}</span></span><br>    
+                            <span class="marge">}</span><br>  
+                        };<br>
+                        <br>
+                        // Gestion d'erreur<br>
+                        if (sort(listeA) || sort(listeB)) {<br>
+                            <span class="marge">return;</span><br>  
+                        }<br>
+                        <br>
+                        if (!arg.includes("fusion")) {<br>
+                            <span class="marge">console.log(</span><br>  
+                                <span class="marge"><span class="marge">'Veuillez séparer les deux liste à fusionner par le mot "fusion"'</span></span><br>    
+                            <span class="marge">);</span><br>    
+                            <span class="marge">return;</span><br>  
+                        }<br>
+                        <br>
+                        // Résolution du problème<br>
+                        <br>
+                        const fusion = (listeA, listeB) => {<br>
+                            <span class="marge">a = listeA.map((num) => Number(num));</span><br>  
+                            <span class="marge">b = listeB.map((num) => Number(num));</span><br>  
+                            <span class="marge">let listeC = [];</span><br>  
+                            <span class="marge">while (a.length !== 0 && b.length !== 0) {</span><br>  
+                                <span class="marge"><span class="marge">if (a[0] < b[0]) {</span></span><br>  
+                                    <span class="marge"><span class="marge"><span class="marge">listeC.push(a.shift());</span></span></span><br>  
+                                <span class="marge"><span class="marge">} else {</span></span><br>  
+                                    <span class="marge"><span class="marge"><span class="marge">listeC.push(b.shift());</span></span></span><br>  
+                                <span class="marge"><span class="marge">}</span></span><br>  
+                            <span class="marge">}</span><br>  
+                            <span class="marge">return listeC.concat(a, b);</span><br>  
+                        };<br>
+                        <br>
+                        // Affichage<br>
+                        <br>
+                        console.log(fusion(listeA, listeB));<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
