@@ -244,6 +244,40 @@
                         console.log(fusion(listeA, listeB));<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 5 -<br>affiche une pyramide<br> - Javascript -</td>
+                    <td style="text-align: left;">// Gestion d'erreur<br>
+                        let arg = process.argv;<br>
+                        arg.splice(0, 2);<br>
+                        <br>
+                        if (arg.length != 2) {<br>
+                            <span class="marge">console.log(</span><br>  
+                                <span class="marge"><span class="marge">"Veuillez indiquer deux arguments au script. Le premier étant un élément au choix pour construire la pyramide (symbole, chiffre, lettre) et le deuxième un nombre pour</span></span><br>  
+                                <span class="marge"><span class="marge">indiquer le nombres d'étage de la pyramide."</span></span><br>  
+                            <span class="marge">);</span><br>  
+                            <span class="marge">return;</span><br>  
+                        }<br>
+                        <br>
+                        // Parsing<br>
+                        let symbole = arg[0];<br>
+                        let stage = arg[1];<br>
+                        let i = 1;<br>
+                        <br>
+                        // Function / Résolution du problème<br>
+                        const pyramide = (symbole, stage, i) => {<br>
+                            <span class="marge">if (stage === 0) {</span><br>   
+                                <span class="marge"><span class="marge">return;</span></span><br>  
+                            <span class="marge">} else {</span><br>  
+                                <span class="marge"><span class="marge">console.log(" ".repeat(stage - 1) + symbole.repeat(i));</span></span><br>  
+                                <span class="marge"><span class="marge">let result = pyramide(symbole, stage - 1, i + 2);</span></span><br>  
+                                <span class="marge"><span class="marge">return result;</span></span><br>  
+                            <span class="marge">}</span><br>  
+                        };<br>
+                        <br>
+                        // Affichage<br>
+                        pyramide(symbole, stage, i);<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
