@@ -278,6 +278,52 @@
                         pyramide(symbole, stage, i);<br>
                     </td>
                 </tr>
+                <tr>
+                    <td>- 6 -<br>Quicksort<br> - Javascript -</td>
+                    <td style="text-align: left;">// Gestion d'erreur<br>
+                        let arg = process.argv;<br>
+                        arg.splice(0, 2);<br>
+                        <br>
+                        if (arg.length < 3) {<br>
+                            <span class="marge">console.log(</span><br>  
+                                <span class="marge"><span class="marge">"Veuillez indiquer au script, une liste de nombre à trier. Exemple : node air06.js 15 4 2 8 56 3"</span></span><br>  
+                            <span class="marge">);</span><br>  
+                            <span class="marge">return;</span><br>  
+                        }<br>
+                        <br>
+                        for (let x = 0; x < arg.length; x++) {<br>
+                            <span class="marge">if (arg[x] % 1 != 0) {</span><br>   
+                                <span class="marge"><span class="marge">console.log("Veuillez indiquer seulement des nombres au script");</span></span><br>  
+                                <span class="marge"><span class="marge">return;</span></span><br>  
+                            <span class="marge">}</span><br>   
+                        }<br>
+                        <br>
+                        // Function<br>
+                        const quicksort = (arg) => {<br>
+                            <span class="marge">const liste = arg.map((num) => Number(num));</span><br>   
+                            <br>
+                            <span class="marge">if (liste.length <= 1) {</span><br>   
+                                <span class="marge"><span class="marge">return liste;</span></span><br>  
+                            <span class="marge">}</span><br>   
+                            <br>
+                            <span class="marge">const pivot = liste.pop();</span><br>   
+                            <span class="marge">const left = [];</span><br>   
+                            <span class="marge">const right = [];</span><br>   
+                            <br>
+                            <span class="marge">for (let x = 0; x < liste.length; x++) {</span><br>
+                                <span class="marge"><span class="marge">if (liste[x] < pivot) {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">left.push(liste[x]);</span></span></span><br>  
+                                <span class="marge"><span class="marge">} else {</span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">right.push(liste[x]);</span></span></span><br>  
+                                <span class="marge"><span class="marge">}</span></span><br>
+                            <span class="marge">}</span><br>    
+                            <br>
+                            <span class="marge">return [...quicksort(left), pivot, ...quicksort(right)];</span><br>    
+                        };<br>
+                        <br>
+                        console.log(quicksort(arg));<br>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
