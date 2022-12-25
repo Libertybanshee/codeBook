@@ -36,7 +36,8 @@
                         //Function / résolution du problème<br>
                         const twin = (arg) => {<br>
                             <span class="marge">if (arg.length < 3) {</span><br>
-                                <span class="marge"><span class="marge">console.log("Veuillez indiquer au minimum, trois arguments au script, dont deux identiques. Example : node air01.js 1 5 1");</span></span><br>
+                                <span class="marge"><span class="marge">console.log("Veuillez indiquer au minimum, trois arguments au script,</span></span><br>
+                                <span class="marge"><span class="marge"> dont deux identiques. Example : node air01.js 1 5 1");</span></span><br>
                                 <span class="marge"><span class="marge">console.log(arg);</span></span><br>
                                 <span class="marge"><span class="marge">return;</span></span><br>
                             <span class="marge">}</span><br>
@@ -79,7 +80,8 @@
                     <td style="text-align: left;">//Gestion d'erreur<br>
                         if (process.argv.length !== 3) {<br>
                             <span class="marge">console.log(</span><br>
-                                <span class="marge"><span class="marge">'Veuillez indiquer une seule phrase au script. Exemple : node air02.js "J\'aime le chocolat,,    avec des crevettes !!!!"'</span></span><br>
+                                <span class="marge"><span class="marge">'Veuillez indiquer une seule phrase au script.</span></span><br>
+                                <span class="marge"><span class="marge"> Exemple : node air02.js "J\'aime le chocolat, avec des crevettes !!!!"'</span></span><br>
                             <span class="marge">);</span><br>
                             <span class="marge">return;</span><br>
                         <br>
@@ -148,7 +150,9 @@
                         <br>
                         if (liste.length < 3) {<br>
                             <span class="marge">console.log(</span><br>
-                                <span class="marge"><span class="marge">"Veuillez indiquer au moins 3 entiers naturels au script. Les premiers représentent une liste triée et le dernier un entier à introduire dans la liste"</span></span><br>
+                                <span class="marge"><span class="marge">"Veuillez indiquer au moins 3 entiers naturels au script. </span></span><br>
+                                <span class="marge"><span class="marge">Les premiers représentent une liste triée</span></span><br>
+                                <span class="marge"><span class="marge">et le dernier un entier à introduire dans la liste"</span></span><br>
                             <span class="marge">);</span><br>
                             <span class="marge">return;</span><br>
                         }<br>
@@ -156,7 +160,8 @@
                         for (let a = 0; a < liste.length; a++) {<br>     
                             <span class="marge">if (liste[a] % 1 !== 0) {</span><br>     
                                 <span class="marge"><span class="marge">console.log(</span></span><br>        
-                                    <span class="marge"><span class="marge"><span class="marge">"Veuillez indiquer seulement des entiers naturel au script. Exemple : node air03.js 1 2 3 5 4 "</span></span></span><br>     
+                                    <span class="marge"><span class="marge"><span class="marge">"Veuillez indiquer seulement des entiers naturel au script.</span></span></span><br>
+                                    <span class="marge"><span class="marge"><span class="marge">Exemple : node air03.js 1 2 3 5 4 "</span></span></span><br>
                                 <span class="marge"><span class="marge">);</span></span><br>   
                                 <span class="marge"><span class="marge">return;</span></span><br>  
                             <span class="marge">}</span><br>   
@@ -288,7 +293,8 @@
                         <br>
                         if (arg.length < 3) {<br>
                             <span class="marge">console.log(</span><br>  
-                                <span class="marge"><span class="marge">"Veuillez indiquer au script, une liste de nombre à trier. Exemple : node air06.js 15 4 2 8 56 3"</span></span><br>  
+                                <span class="marge"><span class="marge">"Veuillez indiquer au script, une liste de nombre à trier.</span></span><br>  
+                                <span class="marge"><span class="marge">Exemple : node air06.js 15 4 2 8 56 3"</span></span><br>  
                             <span class="marge">);</span><br>  
                             <span class="marge">return;</span><br>  
                         }<br>
