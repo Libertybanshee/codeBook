@@ -150,7 +150,10 @@
                         if (arg.length !== 3) {<br>
                             <span class="marge">console.log("Veuillez indiquer au script, qu'un seul argument");</span><br>
                         } else if (!isNaN(num)){<br>
-                            <span class="marge">console.log("Veuillez indiquer au script, un string en argument. Ex : node terre08.js \"Le ciel est bleu\"");</span><br>
+                            <span class="marge">console.log(</span><br>
+                                <span class="marge"><span class="marge">"Veuillez indiquer au script, un string en argument.</span></span><br>
+                                <span class="marge"><span class="marge">Ex : node terre08.js \"Le ciel est bleu\" ")</span></span><br>
+                            <span class="marge">);</span><br>
                         } else {<br>
                             <span class="marge">console.log(arg2.length)</span><br>
                         }<br>
@@ -212,7 +215,8 @@
                         mil = Math.round((max - min) / 2);<br>
                         car = min + mil;<br>
                         <br>
-                        // Boucle qui détermine le carré du nombre en mettant au carré le millieu de l'intervale<br>
+                        // Boucle qui détermine le carré du nombre <br>
+                        // en mettant au carré le millieu de l'intervale<br>
                         if (car * car == arg) {<br>
                             <span class="marge">console.log("La racine carré de " + arg + " est " + car);</span><br>
                             <span class="marge">return;</span><br>
@@ -285,7 +289,8 @@
                     <td>- 12 -<br>Converti un heure en 24h/12h<br> Epreuve de la terre<br> - Javascript -</td>
                     <td style="text-align: left;">if (process.argv[2] == undefined) {<br>
                         <span class="marge">console.log(</span><br>
-                            <span class="marge"><span class="marge">"Veuillez indiquer au script, un heure au format 24. Exemple : node terre12.js 18:00"</span></span><br>
+                            <span class="marge"><span class="marge">"Veuillez indiquer au script,</span></span><br>
+                            <span class="marge"><span class="marge"> un heure au format 24. Exemple : node terre12.js 18:00"</span></span><br>
                         <span class="marge">);</span><br>
                         <span class="marge">return;</span><br>
                     }<br>
@@ -316,7 +321,9 @@
                     <br>
                     if (process.argv[2] == undefined) {<br>
                         <span class="marge">console.log(</span><br>
-                            <span class="marge"><span class="marge">"Veuillez indiquer au script, une heure au format 12 avec l'indication AM ou PM. Exemple : 12:00PM"</span></span><br>
+                            <span class="marge"><span class="marge">"Veuillez indiquer au script,</span></span><br>
+                            <span class="marge"><span class="marge"> une heure au format 12 avec l'indication AM ou PM.</span></span><br>
+                            <span class="marge"><span class="marge"> Exemple : 12:00PM"</span></span><br>
                         <span class="marge">);</span><br>
                         <span class="marge">return;</span><br>
                     }<br>
@@ -326,7 +333,9 @@
                     <br>
                     if (min[3] !== "M") {<br>
                         <span class="marge">console.log(</span><br>
-                            <span class="marge"><span class="marge">"Veuillez indiquer au script, une heure au format 12 avec l'indication AM ou PM. Exemple : 12:00PM"</span></span><br>
+                            <span class="marge"><span class="marge">"Veuillez indiquer au script,</span></span><br>
+                            <span class="marge"><span class="marge"> une heure au format 12 avec l'indication AM ou PM.</span></span><br>
+                            <span class="marge"><span class="marge"> Exemple : 12:00PM"</span></span><br>
                         <span class="marge">);</span><br>
                         <span class="marge">return;</span><br>
                     } else if (heure[0] > 12) {<br>
@@ -350,10 +359,16 @@
                 <tr>
                     <td>- 14 -<br>Valeur du milieu<br> Epreuve de la terre<br> - Javascript -</td>
                     <td style="text-align: left;">if (process.argv[2] == undefined) {<br>
-                        <span class="marge">console.log("Veuillez indiquer trois nombres en argument. Ex : terre14.js 24 85 69")</span><br>
+                        <span class="marge">console.log( </span><br>
+                            <span class="marge"><span class="marge">"Veuillez indiquer trois nombres en argument.</span></span><br>
+                            <span class="marge"><span class="marge">Ex : terre14.js 24 85 69"</span></span><br>
+                        <span class="marge">);</span><br>
                         <span class="marge">return</span><br>
                     } else if (process.argv.length != 5) {<br>
-                        <span class="marge">console.log("Veuillez indiquer trois nombres en argument. Ex : terre14.js 24 85 69")</span><br>
+                        <span class="marge">console.log( </span><br>
+                            <span class="marge"><span class="marge">"Veuillez indiquer trois nombres en argument.</span></span><br>
+                            <span class="marge"><span class="marge">Ex : terre14.js 24 85 69"</span></span><br>
+                        <span class="marge">);</span><br>
                         <span class="marge">return</span><br>
                     }<br>
                     <br>
