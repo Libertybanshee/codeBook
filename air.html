@@ -332,6 +332,61 @@
                         console.log(quicksort(arg));<br>
                     </td>
                 </tr>
+                <td>- 7 -<br>vérifie tous les exercices<br>de l'épreuve de l'air<br> - Javascript -</td>
+                <td style="text-align: left;">const { exec } = require("child_process");<br>
+                    const util = require("util");<br>
+                    const execProm = util.promisify(exec);<br>
+                    <br>
+                    // Gestion d'erreur<br>
+                    if (process.argv.length > 2) {<br>
+                        <span class="marge">console.log("Le script n'a pas besoin d'argument pour fonctionner.");</span><br>    
+                        <span class="marge">return;</span><br>    
+                    }<br>
+                    <br>
+                    // Function<br>
+                    async function testAir(air, arg, solution) {<br>
+                        <span class="marge">let result;</span><br>    
+                        <span class="marge">try {</span><br>    
+                            <span class="marge"><span class="marge">result = await execProm(`node ${air} ${arg}`);</span></span><br>
+                        <span class="marge">} catch (error) {</span><br>    
+                            <span class="marge"><span class="marge">result = error;</span></span><br>
+                        <span class="marge">}</span><br>    
+                        <span class="marge">return result;</span><br>    
+                    }<br>
+                    <br>
+                    // Air06<br>
+                    const air06 = "../Air06/air06.js";<br>
+                    const listeJ = "1 7 2 8 2 3 5 4 9 5 6";<br>
+                    const listeK = "15 2 7 56 34 79 20 4 67 12 85 46 38";<br>
+                    const listeL = "125 754 142 246 963 582 762 436 953 412 384 689";<br>
+                    <br>
+                    // Air01<br>
+                    async function Air01() {<br>
+                        <span class="marge">const air01 = "../Air01/air01.js";</span><br>   
+                        <br>
+                        <span class="marge">const listeA = `1 1 2 5 2 5 4 4 7 6 7 5 5`;</span><br>  
+                        <span class="marge">const listeA_Sol = `"[ '6' ]"`;</span><br>  
+                        <br>
+                        <span class="marge">const listeB = "manger dormir boire danser vomir manger danser dormir";</span><br>  
+                        <span class="marge">const listeB_Sol = `"[ 'boire', 'vomir' ]"`;</span><br>  
+                        <br>
+                        <span class="marge">const listeC = "+ 2 - 5 a 5 - 7 . 8 g g 9 , 3 - 1 . 5 a k 7 g 8 9 3 2 ";</span><br>  
+                        <span class="marge">const listeC_Sol = `"[ '+', ',', '1', 'k' ]"`;</span><br>  
+                        <br>
+                        <span class="marge">let count = 0;</span><br>  
+                        <br>
+                        <span class="marge">await testAir(air01, listeA, listeA_Sol).then((res) => {</span><br>   
+                            <span class="marge"><span class="marge">let solution = JSON.stringify(</span></span><br>
+                                <span class="marge"><span class="marge"><span class="marge">res.stdout.substring(0, res.stdout.length - 1)</span></span></span><br>  
+                            <span class="marge"><span class="marge">const result = listeA_Sol;</span></span><br>
+                            <span class="marge"><span class="marge">if (solution === result) {</span></span><br>
+                                <span class="marge"><span class="marge"><span class="marge">return count++;</span></span></span><br>  
+                            <span class="marge"><span class="marge">}</span></span><br>
+                        });<br>
+                        <br>
+                        Reprendre ligne 60<br>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
