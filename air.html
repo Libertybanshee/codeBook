@@ -384,7 +384,31 @@
                             <span class="marge"><span class="marge">}</span></span><br>
                         });<br>
                         <br>
-                        Reprendre ligne 60<br>
+                        <span class="marge">await testAir(air01, listeB, listeB_Sol).then((res) => {</span><br> 
+                            <span class="marge"><span class="marge">let solution = JSON.stringify(</span></span><br>
+                                <span class="marge"><span class="marge"><span class="marge">res.stdout.substring(0, res.stdout.length - 1)</span></span></span><br>  
+                            <span class="marge"><span class="marge">);</span></span><br>
+                            <span class="marge"><span class="marge">const result = listeB_Sol;</span></span><br>
+                            <span class="marge"><span class="marge">if (solution === result) {</span></span><br>
+                                <span class="marge"><span class="marge"><span class="marge">return count++;</span></span></span><br>  
+                            <span class="marge"><span class="marge">}</span></span><br>
+                        <span class="marge">});</span><br> 
+                        <br>
+                        <span class="marge">await testAir(air01, listeC, listeC_Sol).then((res) => {</span><br> 
+                            <span class="marge"><span class="marge">let solution = JSON.stringify(</span></span><br>
+                                <span class="marge"><span class="marge"><span class="marge">res.stdout.substring(0, res.stdout.length - 1)</span></span></span><br>  
+                            <span class="marge"><span class="marge">);</span></span><br>
+                            <span class="marge"><span class="marge">const result = listeC_Sol;</span></span><br>
+                            <span class="marge"><span class="marge">if (solution === result) {</span></span><br>
+                                <span class="marge"><span class="marge"><span class="marge">return count++;</span></span></span><br>  
+                            <span class="marge"><span class="marge">}</span></span><br>
+                        <span class="marge">});</span><br> 
+                        <br>
+                        <span class="marge">return console.log(` air01 : ${count} / 3`);</span><br> 
+                    }<br>
+                    <br>
+                    // Air02<br>
+                    Reprendre ligne 84<br>
                 </td>
             </tr>
             </tbody>
