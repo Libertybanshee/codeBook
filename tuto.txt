@@ -1,0 +1,131 @@
+logiciel a DL pour symphony:
+
+Commander installer:
+https://cmder.net/
+
+Composer installer:
+https://getcomposer.org/download/
+   -> puis sur dos rentrer les commandes dans l'ordre suivantes 
+   1 - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+   2 - php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+   3 - php composer-setup.php
+   4 - php -r "unlink('composer-setup.php');" 
+
+Symfony installer:
+https://symfony.com/
+   -> puis sur dos rentrer la commandes:
+   curl -sS https://get.symfony.com/cli/installer | bash
+
+commande d'installation dans le dossier htdocs de xampp où mamp:
+- aller dans le dossier -> cd C:\xampp\htdocs
+- executer la commande suivante -> composer create-project symfony/website-skeleton *Nom du dossier de votre choix*
+- accepter Docker si demander -> appuyer sur y si demander
+- retrouver dans le dossier de notre projet -> cd C:\xampp\htdocs\*Nom du dossier de votre choix*
+- installer le pack apache -> composer require symfony/apache-pack
+- accepter s'il y a une demande -> appuyer sur y si demander
+- lien vers la page d'accueil de notre dossier : http://localhost/*Nom du dossier de votre choix*/public/
+
+commande pour créer une base de données : 
+- chercher le fichier .env puis copier/collé ce fichier au même endroit
+- rename en .env.local pour l'execution en local
+- dans .env.local mettre en commentaire la ligne 31 (il suffit de mettre un # au début)
+- toujours dans .env.local la ligne 30 retire le commentaire
+   -> remplacer attentivement les ** par les information serveur/BDD
+   -> DATABASE_URL="mysql://*utilisateur où root*:*mot de passe où rien mettre*@127.0.0.1:*numéro de port*/*nom de la BDD*?*serverVersion=5.7*"
+   -> ATTENTION PIEGE serverVersion=mariadb-10.4.1 pour xammp / serverVersion=5.7 pour Mamp
+   -> exemple de la ligne 30: DATABASE_URL="mysql://root:@127.0.0.1:3306/symfony_initiation?serverVersion=mariadb-10.4.1" 
+- lancer commander + symfony server:start 
+- ouvrir un deuxième commander + php bin/console doctrine:database:create
+
+commande pour créer une entité : ( Création de table 1/3 )
+- php bin/console make:entity
+- voir le screenshot de commander pour la création complète
+  -> screenshot dans le dossier screenshot de commande
+
+commande pour faire une migration : ( Création de table 2/3 )
+- php bin/console make:migration
+
+commande pour enregistrer la migration dans la base de données : ( Création de table 3/3 )
+- php bin/console doctrine:migrations:migrate
+
+commande pour créer un controller :
+- php bin/console make:controller
+  -> puis rentre Post où autre commande (à vérifier)
+
+commande pour créer un formulaire :
+- php bin/console make:form 
+- voir le screenshot de commander pour la création complète
+
+commande pour ajouter une clé étrangère:
+- php bin/console make:entity
+- voir le screenshot de commander pour l'ajout de cle etrangere
+  -> screenshot dans le dossier screenshot de commande
+
+commande user :
+- php bin/console make:user
+- tapez entre jusqu'a success
+- puis faire une migration
+
+commande d'authentification:
+- php bin/console make:auth
+- 1ère question on réponds 1 .
+- 2ème question on répond : AppCustomAuthenticator
+- au deux questions suivantes on appuis sur Entrer.
+- SI tu as version 6.0 pas de besoin de modif la ligne 100
+- remplacez le fichier security.yaml par un autre
+  -> fichier dans le dossier screenshot de commande, nommé " security.yaml.txt "
+remplacez le fichier AppCustomAuthenticator par un autre
+  -> fichier dans le dossier screenshot de commande, nommé " AppCustomAuthenticator.php.txt 
+- modif ligne décommande 53
+   par exemple  // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
+   -> return new RedirectResponse($this->urlGenerator->generate('some_route'));
+   final
+   return new RedirectResponse($this->urlGenerator->generate('front_list_product'));
+- modif ligne 54 
+    par exemple // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+    final 
+    throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+
+commande pour avoir un mot de passe  hashé : 
+- php bin/console security:hash-password
+- tapez 0
+- ecrire mdp * ATENTION mdp CACHER *
+- tapez entrer
+
+sécurisé contrôle accès:
+- modif # - { path: ^/admin, roles: ROLE_ADMIN }
+   -> - { path: ^/admin, roles: ROLE_ADMIN }
+
+ajouter un API
+- dans le terminal où Cmder tapez composer require api
+- dans le fichier Entity ajouté:
+	-> use ApiPlatform\Metadata\ApiResource;
+	-> #[ApiResource]
+	-> ex:	<?php
+
+		namespace App\Entity;
+	
+		use App\Repository\BasketRepository;
+		use Doctrine\ORM\Mapping as ORM;
+		COLLEZ ICI -> use ApiPlatform\Metadata\ApiResource;
+
+		#[ORM\Entity(repositoryClass: BasketRepository::class)]
+		COLLEZ ICI -> #[ApiResource]
+		class Basket
+		{
+  		  #[ORM\Id]
+  		  #[ORM\GeneratedValue]
+  		  #[ORM\Column]
+
+- execuez API PLATFORM dans l'URL du navigateur tapez http://localhost/*Nom du dossier de votre choix*/public/api
+- Testez l'api avec Postman
+- tuto YT postman -> https://www.youtube.com/watch?v=TCx2M6KRn9c
+		  -> vers 27mn pour le POST
+		  -> dans header mettre Content-Type // dans Value mettre application/ld+json
+		  -> dans l'onglet body à côté de Header, cochez Raw
+		  -> revoir le vidéo YT pour plus d'explication. mot clé: Introduction à API Platform dans un projet Symfony de la chaine Nouvelle Techno
+
+Clear le cache:
+- php bin/console cache:clear
+
+
