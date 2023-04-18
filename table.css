@@ -8,6 +8,20 @@
     margin-left: 2em;
 }
 
+.noStyle {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btnBack {
+  color: black;
+  margin-top: 0px;
+}
+
+.imgSong {
+  width: 25px;
+}
+
 body {
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
