@@ -7,3 +7,6 @@
     - Python
     - PHP
     - créer une liste
+
+- Do to list : 
+    - icone note de musique à ajouter pour rediriger vers la page de musique
