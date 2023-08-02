@@ -121,6 +121,31 @@
                         end
                     </td>
                 </tr>
+                <tr>
+                    <td>Gestion du Timing<br> - LUA / TIC-80 -</td>
+                    <td style="text-align: left;">local startTime = time()<br>
+                        local seconde = 0<br>
+                        <br>
+                        function TIC()<br>
+                            <span class="marge">cls()  -- Efface l'écran</span><br>
+                            <br>
+                            <span class="marge">local currentTime = time()</span><br>
+                            <span class="marge">local elapsedTime = currentTime - startTime</span><br>
+                            <br>
+                            <span class="marge">-- Vérifier si 1 seconde (1000 millisecondes) s'est écoulée</span><br>
+                            <span class="marge">if elapsedTime >= 1000 then </span><br>
+                                <span class="marge"><span class="marge">startTime = currentTime  -- Réinitialiser le temps de départ</span></span><br>
+                                <span class="marge"><span class="marge">seconde = seconde + 1  -- Augmenter le compteur de secondes</span></span><br>
+                            <span class="marge">end</span><br>
+                            <br>
+                            <span class="marge">-- Afficher le nombre de secondes écoulées</span><br>
+                            <span class="marge">print("Secondes écoulées : " .. seconde, 10, 10, 15)</span><br>
+                            <br>
+                            <span class="marge">-- Vous pouvez ajouter d'autres éléments ou des commandes TIC ici</span><br>
+                        end<br>
+                        
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
